@@ -2,13 +2,14 @@
 # @Time    : 2019/3/25 12:38
 # @Author  : MLee
 # @File    : AStar.py
-
+import logging
 from collections import deque
 
 
 class AStar:
-    def __init__(self, graph):
+    def __init__(self, graph, floyd):
         self.graph = graph
+        self.floyd = floyd
 
     def distBetween(self, edge):
         """
@@ -25,7 +26,7 @@ class AStar:
         :param goal: 目标节点
         :return: h(n)
         """
-        return 1
+        return self.floyd.get_dist(start, goal)
 
     def neighborNodes(self, current):
         """
@@ -33,11 +34,6 @@ class AStar:
         :param current: 当前节点的 ID
         :return:
         """
-        # neighbors = dict()
-        # for edge in self.graph[current]:
-        #     neighbors[edge.road_id] = edge
-        #
-        # return neighbors
         return self.graph.get_neighbors(current)
 
     def reconstructPath(self, cameFrom, goal):
@@ -77,27 +73,35 @@ class AStar:
         :param goal:
         :return:
         """
+        # logging.info("a star search node id: {} to id: {}".format(start, goal))
         cameFrom = {}
         openSet = set([start])
         closedSet = set()
         gScore = {}
         fScore = {}
         gScore[start] = 0
+        # logging.info("openSet: {} ".format(list(openSet)))
         fScore[start] = gScore[start] + self.heuristicEstimate(start, goal)
+        # logging.info("h({}, {}): {} ".format(start, goal, self.heuristicEstimate(start, goal)))
         while len(openSet) != 0:
+            # logging.info("openSet: {} ".format(list(openSet)))
             current = self.getLowest(openSet, fScore)
+            # logging.info("get lowest node id: {} ".format(current))
             if current == goal:
                 return self.reconstructPath(cameFrom, goal)
             openSet.remove(current)
             closedSet.add(current)
-            for neighbor, neighbor_road in self.neighborNodes(current):
-                tentative_gScore = gScore[current] + self.distBetween(neighbor_road)
-                if neighbor in closedSet and tentative_gScore >= gScore[neighbor]:
+            # logging.info("current node id: {} ".format(current))
+            for edge_id, edge in self.neighborNodes(current).items():
+                adjacent_id = edge.end_id
+                # logging.info("node {} neighbor node: {} ".format(current, adjacent_id))
+                tentative_gScore = gScore[current] + self.distBetween(edge)
+                if adjacent_id in closedSet and tentative_gScore >= gScore[adjacent_id]:
                     continue
-                if neighbor not in closedSet or tentative_gScore < gScore[neighbor]:
-                    cameFrom[neighbor] = current
-                    gScore[neighbor] = tentative_gScore
-                    fScore[neighbor] = gScore[neighbor] + self.heuristicEstimate(neighbor, goal)
-                    if neighbor not in openSet:
-                        openSet.add(neighbor)
+                if adjacent_id not in closedSet or tentative_gScore < gScore[adjacent_id]:
+                    cameFrom[adjacent_id] = current
+                    gScore[adjacent_id] = tentative_gScore
+                    fScore[adjacent_id] = gScore[adjacent_id] + self.heuristicEstimate(adjacent_id, goal)
+                    if adjacent_id not in openSet:
+                        openSet.add(adjacent_id)
         return 0

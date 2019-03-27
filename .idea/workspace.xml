@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41c3ca2c-ed87-4765-a803-408ec4230252" name="Default" comment="" />
+    <list default="true" id="41c3ca2c-ed87-4765-a803-408ec4230252" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/CodeCraft-2019/src/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CodeCraft-2019/src/.idea/src.iml" afterPath="$PROJECT_DIR$/CodeCraft-2019/src/.idea/src.iml" />
+      <change beforePath="$PROJECT_DIR$/CodeCraft-2019/src/.idea/workspace.xml" afterPath="$PROJECT_DIR$/CodeCraft-2019/src/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CodeCraft-2019/src/AStar/AStar.py" afterPath="$PROJECT_DIR$/CodeCraft-2019/src/AStar/AStar.py" />
+      <change beforePath="$PROJECT_DIR$/CodeCraft-2019/src/CodeCraft-2019.py" afterPath="$PROJECT_DIR$/CodeCraft-2019/src/CodeCraft-2019.py" />
+      <change beforePath="$PROJECT_DIR$/CodeCraft-2019/src/solution/getSolution.py" afterPath="$PROJECT_DIR$/CodeCraft-2019/src/solution/getSolution.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,22 +27,32 @@
         <entry file="file://$PROJECT_DIR$/CodeCraft-2019/src/solution/getSolution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="427">
-              <caret line="266" column="74" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="266" selection-end-column="74" />
+              <caret line="272" column="74" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="272" selection-end-column="74" />
               <folding>
-                <element signature="e#99#113#0" expanded="true" />
+                <marker date="1553657702056" expanded="true" signature="9754:9965" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeCraft-2019.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CodeCraft-2019.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeCraft-2019/src/CodeCraft-2019.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="270" column="11" lean-forward="true" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
+            <state relative-caret-position="116">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AStar.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CodeCraft-2019/src/AStar/AStar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="812">
+              <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -56,11 +75,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CodeCraft-2019/src/solution/getSolution.py" />
         <option value="$PROJECT_DIR$/CodeCraft-2019/src/CodeCraft-2019.py" />
+        <option value="$PROJECT_DIR$/CodeCraft-2019/src/AStar/AStar.py" />
       </list>
     </option>
   </component>
@@ -71,11 +94,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
+    <option name="x" value="3061" />
     <option name="y" value="-11" />
-    <option name="width" value="2582" />
-    <option name="height" value="1462" />
+    <option name="width" value="2326" />
+    <option name="height" value="1258" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -128,6 +152,13 @@
               <item name="pythonCode" type="462c0819:PsiDirectoryNode" />
               <item name="CodeCraft-2019" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pythonCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pythonCode" type="462c0819:PsiDirectoryNode" />
+              <item name="CodeCraft-2019" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AStar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pythonCode" type="b2602c69:ProjectViewProjectNode" />
@@ -206,16 +237,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2582" height="1402" extended-state="6" />
+    <frame x="3061" y="-11" width="2326" height="1258" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964224" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27872533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964224" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -253,9 +284,9 @@
     <entry file="file://$PROJECT_DIR$/CodeCraft-2019/src/solution/getSolution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
-          <caret line="266" column="74" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="266" selection-end-column="74" />
+          <caret line="272" column="74" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="272" selection-end-column="74" />
           <folding>
-            <element signature="e#99#113#0" expanded="true" />
+            <marker date="1553657702056" expanded="true" signature="9754:9965" ph="..." />
           </folding>
         </state>
       </provider>
@@ -277,11 +308,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CodeCraft-2019/src/CodeCraft-2019.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="270" column="11" lean-forward="true" selection-start-line="270" selection-start-column="11" selection-end-line="270" selection-end-column="11" />
+        <state relative-caret-position="116">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeCraft-2019/src/AStar/AStar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

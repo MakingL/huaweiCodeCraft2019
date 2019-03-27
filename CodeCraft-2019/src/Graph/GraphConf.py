@@ -30,7 +30,7 @@ class Road(object):
         #                                                                                   type(self.speed_limit),
         #                                                                                   self.chanel,
         #                                                                                   type(self.chanel)))
-        self.weight = self.road_len / (self.speed_limit * self.chanel)
+        self.weight = self.road_len / (self.speed_limit * self.chanel) + 0.5
         self.traveled_times = 0
 
 

@@ -6,6 +6,7 @@ import logging
 
 from AStar.AStar import AStar
 from Dijkstra.Dijkstra import Dijkstra
+from Floyd.Floyd import Floyd
 from Graph.GraphConf import Car, Road, Graph
 
 
@@ -16,14 +17,10 @@ class GetSolution(object):
         super(GetSolution, self).__init__()
         self.car_path, self.road_path, self.cross_path, self.answer_path = conf_path
         self.car_dict = dict()
-        # self.road_dict = dict()
-        # self.graph_dict = dict(set())
         self.graph = Graph()
         self.pending_car_list = list()
 
-        # 有车辆访问过的道路id 集合
-        self.road_set_traveled = set()
-        self.road_weight_delta_dict = dict(dict())
+        self.Floyd = None
 
         self.weight_update_list = list()
 
@@ -50,7 +47,6 @@ class GetSolution(object):
                 car_conf = car_id, car_from, car_to, int(car_speed), int(car_plan_time)
                 self.car_dict[car_id] = Car(car_conf)
                 self.pending_car_list.append(self.car_dict[car_id])
-                # self.car_list.append(Car(car_conf))
 
         logging.info("car count: {}".format(len(self.car_dict)))
 
@@ -65,7 +61,6 @@ class GetSolution(object):
                 road_id, road_len, speed_limit, chanel, start_id, end_id, bilateral = data.split(",")
                 road_len, speed_limit, chanel = int(road_len), int(speed_limit), int(chanel)
                 road_conf = road_id, int(road_len), int(speed_limit), int(chanel), start_id, end_id
-                # self.road_dict[road_id] = Road(road_conf)
                 new_road = Road(road_conf)
                 # 正向边添加到图中
                 # self.graph_dict[start_id].add(road_id)
@@ -81,9 +76,13 @@ class GetSolution(object):
                     # self.graph_dict[end_id].add(back_road_id)
                     self.graph.add_edge(end_id, back_road_id, new_road)
 
-        logging.info("vertex list: {}".format(self.graph.get_vertex_list()))
+        # logging.info("vertex list: {}".format(self.graph.get_vertex_list()))
         logging.info("road count: {}".format(road_count))
         logging.info("load data complete")
+
+        # Floyd 求任意两点的最短距离，A* 算法用
+        self.Floyd = Floyd(self.graph)
+        logging.info("Floyd init complete")
 
     def compute_result(self):
         # 初始化调度参数
@@ -95,7 +94,7 @@ class GetSolution(object):
 
         # 预处理
         self.pre_process()
-        logging.info("pending car list: {}".format(self.get_pending_car_id_list()))
+        # logging.info("pending car list: {}".format(self.get_pending_car_id_list()))
 
         time_slice = 0
         while True:
@@ -118,11 +117,14 @@ class GetSolution(object):
             weight_update_dict = dict()
             weight_update_dict.clear()
             for car in car_scheduling_set:
-                # plan_path = self.get_a_star_path(self.graph_dict, car.car_from, car.car_to)
                 # logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
-                #                 car.car_from, car.car_to))
-                plan_path = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
-                logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
+                #                                                                   car.car_from, car.car_to))
+                # plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
+                # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
+                plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
+                # logging.info("car: {} shortest path: {} cost: {}".format(car.car_id, plan_path, cost))
+                # floyd_shortest = self.Floyd.get_dist(car.car_from, car.car_to)
+                # logging.info("floyd shortest: {}".format(floyd_shortest))
 
                 self.car_dict[car.car_id].plan_path = plan_path
                 # 车辆的真实出发时间
@@ -192,7 +194,6 @@ class GetSolution(object):
     def update_decay_graph_weight(self):
         for w_update in self.weight_update_list:
             for road_id in w_update:
-                logging.info("decay road weight: {}".format(road_id))
                 w_u = w_update[road_id]["weight"]
                 beta = w_u * self.alpha * w_update[road_id]["times"]
                 self.graph.change_edge_weight(road_id, (beta - 1) * w_u)
@@ -201,13 +202,13 @@ class GetSolution(object):
         # for road_id in self.road_set_traveled:
         #     road_traveled_times = self.graph.get_edge_traveled_times(road_id)
         #     self.graph.decay_edge_weight(road_id, self.weight_decay_ratio * road_traveled_times)
-            # road.weight *= (self.weight_decay_ratio * road.traveled_times)
+        # road.weight *= (self.weight_decay_ratio * road.traveled_times)
 
     def update_graph_weight(self, path, weight_update_dict, car_speed):
         path_list = list(path)
-        for i in range(len(path_list)-1):
+        for i in range(len(path_list) - 1):
             start = path_list[i]
-            end = path_list[i+1]
+            end = path_list[i + 1]
             edge = self.graph.get_edge_obj(start, end)
 
             if edge is None:
@@ -215,9 +216,9 @@ class GetSolution(object):
 
             road_id = edge.road_id
 
-        # for vertex_id in path:
-        #     if road_id not in self.road_set_traveled:
-        #         self.road_set_traveled.add(road_id)
+            # for vertex_id in path:
+            #     if road_id not in self.road_set_traveled:
+            #         self.road_set_traveled.add(road_id)
 
             # 保存权值变化
             if road_id not in weight_update_dict:
@@ -229,17 +230,15 @@ class GetSolution(object):
             weight_update_dict[road_id]["weight"] += weight_update_delta
             weight_update_dict[road_id]["times"] += 1
 
-            logging.info("update road weight: {} + {}".format(road_id, weight_update_delta))
+            # logging.info("update road weight: {} + {}".format(road_id, weight_update_delta))
 
-            # 将权值的变化量存储起来
-            # self.storage_weight_delta(car_id, road_id, weight_update_delta)
 
             # 更新道路上的权值
             self.graph.change_edge_weight(road_id, weight_update_delta)
             # self.graph.change_edge_travel_times(road_id, 1)
 
     def get_a_star_path(self, graph, source, destination):
-        aStarSchedule = AStar(graph)
+        aStarSchedule = AStar(graph, self.Floyd)
         return aStarSchedule.aStar(source, destination)
 
     def get_dijkstra_path(self, graph, car_from, car_to):
@@ -252,7 +251,7 @@ class GetSolution(object):
         """
         dijkstra = Dijkstra(graph)
         shortest_path, shortest_cost = dijkstra.dijkstra_search(car_from, car_to)
-        return shortest_path
+        return shortest_path, shortest_cost
 
     def has_pending_car(self):
         return len(self.pending_car_list) != 0
@@ -260,21 +259,17 @@ class GetSolution(object):
     def get_pending_car_id_list(self):
         return [x.car_id for x in self.pending_car_list]
 
-    def storage_weight_delta(self, car_id, road_id, weight_update_delta):
-        if car_id not in self.road_weight_delta_dict:
-            self.road_weight_delta_dict[car_id] = dict()
-
-        self.road_weight_delta_dict[car_id][road_id] = weight_update_delta
-
 
 if __name__ == '__main__':
-    car_path = "./config/car.txt"
-    road_path = "./config/road.txt"
-    cross_path = "./config/cross.txt"
-    answer_path = "./config/answer.txt"
+    car_path = "../config/car.txt"
+    road_path = "../config/road.txt"
+    cross_path = "../config/cross.txt"
+    answer_path = "../config/answer.txt"
 
+    logging.disable(logging.INFO)
+    logging.disable(logging.ERROR)
     logging.basicConfig(level=logging.DEBUG,
-                        filename='./logs/CodeCraft-2019.log',
+                        filename='../logs/CodeCraft-2019.log',
                         format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S',
                         filemode='w+')
