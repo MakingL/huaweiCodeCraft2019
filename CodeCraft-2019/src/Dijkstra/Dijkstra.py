@@ -3,7 +3,7 @@
 # @Author  : MLee
 # @File    : Dijkstra.py
 import heapq
-import logging
+# import logging
 from collections import deque
 
 
@@ -35,11 +35,6 @@ class Dijkstra(object):
         self.graph = graph
 
     def get_neighbors(self, current):
-        # neighbors = dict()
-        # for edge in self.graph[current]:
-        #     neighbors[edge.road_id] = edge
-        #
-        # return neighbors
         return self.graph.get_neighbors(current)
 
     def dijkstra_search(self, start, goal):

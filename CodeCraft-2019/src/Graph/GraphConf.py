@@ -14,8 +14,8 @@ class Car(object):
         super(Car, self).__init__()
         self.car_id, self.car_from, self.car_to, self.speed, self.plan_time = car_conf
         self.true_start_time = 0
-        # self.plan_path = list()
         self.plan_path = deque()
+        self.plan_path_list = list()
 
 
 class Road(object):
@@ -24,12 +24,6 @@ class Road(object):
     def __init__(self, road_conf):
         super(Road, self).__init__()
         self.road_id, self.road_len, self.speed_limit, self.chanel, self.start_id, self.end_id = road_conf
-        # logging.info("road len: {} type {}, speed: {} type {}, chanel: {} type {}".format(self.road_len,
-        #                                                                                   type(self.road_len),
-        #                                                                                   self.speed_limit,
-        #                                                                                   type(self.speed_limit),
-        #                                                                                   self.chanel,
-        #                                                                                   type(self.chanel)))
         self.weight = self.road_len / (self.speed_limit * self.chanel) + 0.5
         self.traveled_times = 0
 
@@ -42,6 +36,7 @@ class Graph(object):
         self.vertex_set = set()
         self.edge_set = set()
         self.edge_dict = dict()
+        self.adjacent_edge_dict = dict(dict())
         self.graph_dict = graph_dict if graph_dict is not None else dict(set())
         self.graph_adjacent_dict = dict(dict())
         self.total_chanel = 0
@@ -61,6 +56,11 @@ class Graph(object):
         if start_id not in self.graph_adjacent_dict:
             self.graph_adjacent_dict[start_id] = dict()
         self.graph_adjacent_dict[start_id][end_id] = edge
+
+        # 顶点和边 id 的邻接关系
+        if start_id not in self.adjacent_edge_dict:
+            self.adjacent_edge_dict[start_id] = dict()
+        self.adjacent_edge_dict[start_id][end_id] = edge_id
 
         self.total_chanel += edge.chanel
 
@@ -128,3 +128,10 @@ class Graph(object):
             return None
 
         return start_adjacent.get(end, None)
+
+    def get_adjacent_edge_id(self, start_vertex, end_vertex):
+        edge_id = self.adjacent_edge_dict[start_vertex][end_vertex]
+
+        # 反向边是以 “_b” 符号连接的
+        edge_id = edge_id.replace("_b", "")
+        return edge_id

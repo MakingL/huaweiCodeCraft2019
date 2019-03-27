@@ -2,7 +2,7 @@
 # @Time    : 2019/3/27 9:48
 # @Author  : MLee
 # @File    : Floyd.py
-import logging
+# import logging
 
 
 class Floyd(object):
@@ -39,10 +39,10 @@ class Floyd(object):
                 for mid in self.graph.vertex_set:
                     self.dist[start][end] = min(self.dist[start][end], self.dist[start][mid] + self.dist[mid][end])
 
-    def print_dist_info(self):
-        for start_id in self.graph.vertex_set:
-            for end_id in self.graph.vertex_set:
-                logging.info("dist[{}][{}]: {}".format(start_id, end_id, self.dist[start_id][end_id]))
+    # def print_dist_info(self):
+    #     for start_id in self.graph.vertex_set:
+    #         for end_id in self.graph.vertex_set:
+    #             logging.info("dist[{}][{}]: {}".format(start_id, end_id, self.dist[start_id][end_id]))
 
     def get_dist(self, start_id, end_id):
         return self.dist[start_id][end_id]

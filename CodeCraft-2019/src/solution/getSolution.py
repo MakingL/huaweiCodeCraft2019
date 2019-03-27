@@ -60,24 +60,24 @@ class GetSolution(object):
                 data = line.replace(" ", "").replace("\t", "")
                 road_id, road_len, speed_limit, chanel, start_id, end_id, bilateral = data.split(",")
                 road_len, speed_limit, chanel = int(road_len), int(speed_limit), int(chanel)
-                road_conf = road_id, int(road_len), int(speed_limit), int(chanel), start_id, end_id
+                road_conf = road_id, road_len, speed_limit, chanel, start_id, end_id
+
                 new_road = Road(road_conf)
                 # 正向边添加到图中
-                # self.graph_dict[start_id].add(road_id)
                 self.graph.add_edge(start_id, road_id, new_road)
                 road_count += 1
 
                 if bilateral == "1":
                     back_road_id = "{}_b".format(road_id)
                     road_conf = back_road_id, road_len, speed_limit, chanel, end_id, start_id
-                    # self.road_dict[back_road_id] = Road(road_conf)
+
                     new_road = Road(road_conf)
                     # 反向边
-                    # self.graph_dict[end_id].add(back_road_id)
                     self.graph.add_edge(end_id, back_road_id, new_road)
 
         # logging.info("vertex list: {}".format(self.graph.get_vertex_list()))
         logging.info("road count: {}".format(road_count))
+        logging.info("vertex count: {}".format(self.graph.get_vertex_count()))
         logging.info("load data complete")
 
         # Floyd 求任意两点的最短距离，A* 算法用
@@ -89,7 +89,6 @@ class GetSolution(object):
         self.schedule_batch_size = int(self.graph.get_vertex_count() *
                                        self.graph.get_average_chanel() / self.omega)
 
-        logging.info("vertex count: {}".format(self.graph.get_vertex_count()))
         logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
 
         # 预处理
@@ -108,7 +107,7 @@ class GetSolution(object):
             logging.info("time slice: {}".format(time_slice))
 
             # ****** 衰减图边上的权值 ******
-            self.update_decay_graph_weight()
+            # self.update_decay_graph_weight()
 
             # 从待调度的车辆 Buffer 中获得一批车辆
             car_scheduling_set = self.get_scheduling_car(time_slice)
@@ -119,26 +118,33 @@ class GetSolution(object):
             for car in car_scheduling_set:
                 # logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
                 #                                                                   car.car_from, car.car_to))
-                # plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
-                # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
-                plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
-                # logging.info("car: {} shortest path: {} cost: {}".format(car.car_id, plan_path, cost))
-                # floyd_shortest = self.Floyd.get_dist(car.car_from, car.car_to)
-                # logging.info("floyd shortest: {}".format(floyd_shortest))
 
+                # A* 算法调度
+                plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
+                # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
+
+                # Dijkstra 算法调度
+                # plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
+                # logging.info("car: {} shortest path: {} cost: {}".format(car.car_id, plan_path, cost))
+
+                # 将路径由节点的序列转换为道路的序列
+                path_list = self.trans_path_to_road(plan_path)
+
+                # 该车辆调度已确定，car 对象可删除
                 self.car_dict[car.car_id].plan_path = plan_path
+                self.car_dict[car.car_id].plan_path_list = path_list
                 # 车辆的真实出发时间
                 self.car_dict[car.car_id].true_start_time = time_slice
 
                 # ****** 更新边上的权值 ******
-                self.update_graph_weight(plan_path, weight_update_dict, car.speed)
+                # self.update_graph_weight(plan_path, weight_update_dict, car.speed)
 
             # 道路访问的车辆数归一化处理
-            for road_id in weight_update_dict:
-                weight_update_dict[road_id]["times"] /= self.schedule_batch_size
+            # for road_id in weight_update_dict:
+            #     weight_update_dict[road_id]["times"] /= self.schedule_batch_size
 
             # 当前时间片的道路权值更新信息保存到列表
-            self.weight_update_list.append(weight_update_dict)
+            # self.weight_update_list.append(weight_update_dict)
 
         logging.info("total time slice: {}".format(time_slice))
 
@@ -146,13 +152,15 @@ class GetSolution(object):
         # 将结果写入到指定的输出文件
         with open(self.answer_path, 'w+') as answer_file:
             for car_id, car in self.car_dict.items():
-                if len(car.plan_path) == 0:
-                    logging.error("car: {} plan path is empty".format(car.car_id))
-                path_str = car.plan_path.popleft()
-                # for road_id in car.plan_path:
-                while len(car.plan_path) != 0:
-                    road_id = car.plan_path.popleft()
-                    path_str += ",{}".format(road_id)
+                # if len(car.plan_path) == 0:
+                #     logging.error("car: {} plan path is empty".format(car.car_id))
+                # path_str = car.plan_path.popleft()
+                # # for road_id in car.plan_path:
+                # while len(car.plan_path) != 0:
+                #     road_id = car.plan_path.popleft()
+                #     path_str += ",{}".format(road_id)
+
+                path_str = ",".join(car.plan_path_list)
                 answer_file.write("({},{},{})\n".format(car_id, car.true_start_time, path_str))
 
     def get_scheduling_car(self, time_slice):
@@ -232,7 +240,6 @@ class GetSolution(object):
 
             # logging.info("update road weight: {} + {}".format(road_id, weight_update_delta))
 
-
             # 更新道路上的权值
             self.graph.change_edge_weight(road_id, weight_update_delta)
             # self.graph.change_edge_travel_times(road_id, 1)
@@ -251,6 +258,7 @@ class GetSolution(object):
         """
         dijkstra = Dijkstra(graph)
         shortest_path, shortest_cost = dijkstra.dijkstra_search(car_from, car_to)
+
         return shortest_path, shortest_cost
 
     def has_pending_car(self):
@@ -259,15 +267,28 @@ class GetSolution(object):
     def get_pending_car_id_list(self):
         return [x.car_id for x in self.pending_car_list]
 
+    def trans_path_to_road(self, plan_path):
+        path_road = list()
+        path_road.clear()
+
+        start_node = plan_path.popleft()
+        while len(plan_path) != 0:
+            end_node = plan_path.popleft()
+            edge_id = self.graph.get_adjacent_edge_id(start_node, end_node)
+            path_road.append(edge_id)
+            start_node = end_node
+
+        return path_road
+
 
 if __name__ == '__main__':
-    car_path = "../config/car.txt"
-    road_path = "../config/road.txt"
-    cross_path = "../config/cross.txt"
-    answer_path = "../config/answer.txt"
+    car_path = "../../config/car.txt"
+    road_path = "../../config/road.txt"
+    cross_path = "../../config/cross.txt"
+    answer_path = "../../config/answer.txt"
 
-    logging.disable(logging.INFO)
-    logging.disable(logging.ERROR)
+    # logging.disable(logging.INFO)
+    # logging.disable(logging.ERROR)
     logging.basicConfig(level=logging.DEBUG,
                         filename='../logs/CodeCraft-2019.log',
                         format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',

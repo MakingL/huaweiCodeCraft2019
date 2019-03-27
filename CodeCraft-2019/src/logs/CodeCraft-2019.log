@@ -1,0 +1,18 @@
+[2019-03-27 22:16:24] INFO [load_data_and_build_graph: getSolution.py, 51] car count: 128
+[2019-03-27 22:16:24] INFO [load_data_and_build_graph: getSolution.py, 79] road count: 60
+[2019-03-27 22:16:24] INFO [load_data_and_build_graph: getSolution.py, 80] vertex count: 36
+[2019-03-27 22:16:24] INFO [load_data_and_build_graph: getSolution.py, 81] load data complete
+[2019-03-27 22:16:24] INFO [load_data_and_build_graph: getSolution.py, 85] Floyd init complete
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 92] schedule car batch size: 30
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 107] time slice: 1
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 107] time slice: 2
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 107] time slice: 3
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 107] time slice: 4
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 107] time slice: 5
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 8
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 102] has no pending car in buffer! Done
+[2019-03-27 22:16:24] INFO [compute_result: getSolution.py, 149] total time slice: 5

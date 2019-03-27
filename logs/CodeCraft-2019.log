@@ -54,3 +54,153 @@
 [2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
 [2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 12
 [2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
+[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 26] car_path is config_5/car.txt
+[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 27] road_path is config_5/road.txt
+[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 28] cross_path is config_5/cross.txt
+[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 29] answer_path is config_5/answer.txt
+[2019-03-27 20:23:45] INFO [load_data_and_build_graph: getSolution.py, 54] car count: 512
+[2019-03-27 20:23:45] INFO [load_data_and_build_graph: getSolution.py, 84] road count: 60
+[2019-03-27 20:23:45] INFO [load_data_and_build_graph: getSolution.py, 85] load data complete
+[2019-03-27 20:23:46] INFO [load_data_and_build_graph: getSolution.py, 89] Floyd init complete
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 96] vertex count: 36
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 97] schedule car batch size: 30
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 1
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 2
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 3
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 4
+[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 26] car_path is config_5/car.txt
+[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 27] road_path is config_5/road.txt
+[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 28] cross_path is config_5/cross.txt
+[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 29] answer_path is config_5/answer.txt
+[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 51] car count: 512
+[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 79] road count: 60
+[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 80] vertex count: 36
+[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 81] load data complete
+[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 85] Floyd init complete
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 92] schedule car batch size: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 1
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 2
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 3
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 4
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 5
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 6
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 7
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 8
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 9
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 10
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 11
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 12
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 13
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 14
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 15
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 16
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 17
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 18
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 2
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 102] has no pending car in buffer! Done
+[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 145] total time slice: 18
+[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 26] car_path is config_10/car.txt
+[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 27] road_path is config_10/road.txt
+[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 28] cross_path is config_10/cross.txt
+[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 29] answer_path is config_10/answer.txt
+[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 51] car count: 2048
+[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 79] road count: 58
+[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 80] vertex count: 36
+[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 81] load data complete
+[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 85] Floyd init complete
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 92] schedule car batch size: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 1
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 2
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 3
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 4
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 5
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 6
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 7
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 8
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 9
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 10
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 11
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 12
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 13
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 14
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 15
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 16
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 17
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 18
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 19
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 20
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 21
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 22
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 23
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 24
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 25
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 26
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 27
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 28
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 29
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 30
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 31
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 32
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 33
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 34
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 35
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 36
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 53
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 102] has no pending car in buffer! Done
+[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 145] total time slice: 36
