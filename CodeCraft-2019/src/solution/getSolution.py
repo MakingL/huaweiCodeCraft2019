@@ -4,6 +4,8 @@
 # @File    : getSolution.py
 import logging
 
+import math
+
 from AStar.AStar import AStar
 from Dijkstra.Dijkstra import Dijkstra
 from Floyd.Floyd import Floyd
@@ -36,10 +38,11 @@ class GetSolution(object):
         self.schedule_batch_size = 0
 
         # 计算 Num_CarPerTime 中的参数 w
-        self.omega = 4
+        self.omega = 64
 
         # 权值衰减公式中的参数 a
-        self.alpha = 1 / 2
+        self.alpha = 1 / 4
+        self.weight_update_dict = dict()
 
     def load_data_and_build_graph(self):
         """
@@ -116,28 +119,23 @@ class GetSolution(object):
             # 时间片加一
             time_slice += 1
             logging.info("time slice: {}".format(time_slice))
-            print("time slice: {}".format(time_slice))
 
             # ****** 衰减图边上的权值 ******
-            print("decaying weight")
             self.update_decay_graph_weight()
-            print("decayed weight")
 
             # 从待调度的车辆 Buffer 中获得一批车辆
             car_scheduling_set = self.get_scheduling_car(time_slice)
             logging.info("got scheduling car set length: {}".format(len(car_scheduling_set)))
 
             weight_update_dict = dict()
-            # weight_update_dict.clear()
+            weight_update_dict.clear()
             for car in car_scheduling_set:
                 logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
                                                                                   car.car_from, car.car_to))
-                print("schedule car: {}. Search node {} to node {}".format(car.car_id,
-                                                                           car.car_from, car.car_to))
 
                 # ***** A* 算法调度 ********
                 plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
-                logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
+                # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
 
                 # ***** Dijkstra 算法调度 *****
                 # plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
@@ -147,19 +145,12 @@ class GetSolution(object):
                 path_list = self.trans_path_to_road(plan_path)
 
                 # 该车辆调度已确定，car 对象可删除
-                # self.car_dict[car.car_id].plan_path = plan_path
                 self.car_dict[car.car_id].plan_path_list = path_list
                 # 车辆的真实出发时间
                 self.car_dict[car.car_id].true_start_time = time_slice
 
                 # ****** 更新边上的权值 ******
-                print("start update weight...")
-                count_n = 0
-                for w_update in self.weight_update_list:
-                    count_n += len(w_update)
-                print("weight_update_list len: {}".format(count_n))
                 self.update_graph_weight(path_list, weight_update_dict, car.speed)
-                print("updated graph weight")
 
             # 道路访问的车辆数归一化处理
             for road_id in weight_update_dict:
@@ -239,18 +230,26 @@ class GetSolution(object):
             if edge is None:
                 logging.error("edge {}: object is not exit".format(road_id))
 
+            edge_start_id = edge.start_id
+            edge_chanel = edge.chanel
+            vertex_degree = self.graph.get_vertex_degree(edge_start_id)
+            speed_min = min(car_speed, edge.speed_limit)
+            gama = vertex_degree * edge_chanel / speed_min
+            # 加 1 防止生成负的权值变化量
+            gama += 2
+            weight_update_delta = math.log(gama)
+
             # 保存权值变化
             if road_id not in weight_update_dict:
-                print("add a new weight_update_dict: {}".format(road_id))
                 weight_update_dict[road_id] = dict()
                 weight_update_dict[road_id]["weight"] = 0
                 weight_update_dict[road_id]["times"] = 0
 
             # 计算权值变化量，并保存
-            weight_update_delta = self.graph.get_edge_weight_delta(road_id, car_speed)
+            # weight_update_delta = self.graph.get_edge_weight_delta(road_id, car_speed)
             weight_update_dict[road_id]["weight"] += weight_update_delta
             weight_update_dict[road_id]["times"] += 1
-            # logging.info("update weight_update_dict: {}".format(weight_update_dict))
+            logging.info("update weight_update_dict: {}".format(weight_update_dict))
 
             # logging.info("update road weight: {} + {}".format(road_id, weight_update_delta))
 

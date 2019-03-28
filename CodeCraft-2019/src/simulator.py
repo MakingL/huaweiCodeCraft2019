@@ -641,7 +641,7 @@ class Simulation(object):
         self.dead = False
 
     def step(self):
-        # print("time:%d" % TIME[0])
+        print("time:%d" % TIME[0])
         for crossId in CROSSNAMESPACE:
             CROSSDICT[crossId].setDone(False)
         # print("pre-movement...")

@@ -116,7 +116,9 @@ class Graph(object):
         edge_chanel = edge.chanel
         vertex_degree = self.get_vertex_degree(edge_source_vertex)
         speed_min = min(car_speed, edge.speed_limit)
-        return math.log(vertex_degree * edge_chanel / speed_min)
+
+        # 加 1 防止生成负的权值变化量
+        return math.log((vertex_degree * edge_chanel / speed_min) + 1)
 
     def get_vertex_degree(self, vertex_id):
         return len(self.graph_dict[vertex_id])
