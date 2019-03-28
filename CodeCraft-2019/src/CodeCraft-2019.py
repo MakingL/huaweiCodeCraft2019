@@ -2,6 +2,7 @@
 import logging
 import sys
 
+from simulator import CheckAnswer
 from solution.getSolution import GetSolution
 
 # logging.disable(logging.INFO)
@@ -10,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='../logs/CodeCraft-2019.log',
                     format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
-                    filemode='a+')
+                    filemode='w+')
 
 
 def main():
@@ -35,6 +36,9 @@ def main():
     solution.compute_result()
     solution.output_solution()
 
+    # 模拟，检验生成的答案
+    simulator = CheckAnswer(car_path, road_path, cross_path, answer_path)
+    simulator.simulating()
 
 # to read input file
 # process

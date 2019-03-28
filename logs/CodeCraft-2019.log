@@ -1,206 +1,875 @@
-[2019-03-27 20:13:37] INFO [main: CodeCraft-2019.py, 26] car_path is config_1/car.txt
-[2019-03-27 20:13:37] INFO [main: CodeCraft-2019.py, 27] road_path is config_1/road.txt
-[2019-03-27 20:13:37] INFO [main: CodeCraft-2019.py, 28] cross_path is config_1/cross.txt
-[2019-03-27 20:13:37] INFO [main: CodeCraft-2019.py, 29] answer_path is config_1/answer.txt
-[2019-03-27 20:13:37] INFO [load_data_and_build_graph: getSolution.py, 58] car count: 128
-[2019-03-27 20:13:37] INFO [load_data_and_build_graph: getSolution.py, 88] road count: 60
-[2019-03-27 20:13:37] INFO [load_data_and_build_graph: getSolution.py, 89] load data complete
-[2019-03-27 20:13:37] INFO [load_data_and_build_graph: getSolution.py, 93] Floyd init complete
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 100] vertex count: 36
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 101] schedule car batch size: 30
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 116] time slice: 1
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 116] time slice: 2
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 116] time slice: 3
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 116] time slice: 4
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 116] time slice: 5
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 8
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 111] has no pending car in buffer! Done
-[2019-03-27 20:13:37] INFO [compute_result: getSolution.py, 151] total time slice: 5
-[2019-03-27 20:13:53] INFO [main: CodeCraft-2019.py, 26] car_path is config_2/car.txt
-[2019-03-27 20:13:53] INFO [main: CodeCraft-2019.py, 27] road_path is config_2/road.txt
-[2019-03-27 20:13:53] INFO [main: CodeCraft-2019.py, 28] cross_path is config_2/cross.txt
-[2019-03-27 20:13:53] INFO [main: CodeCraft-2019.py, 29] answer_path is config_2/answer.txt
-[2019-03-27 20:13:53] INFO [load_data_and_build_graph: getSolution.py, 58] car count: 512
-[2019-03-27 20:13:53] INFO [load_data_and_build_graph: getSolution.py, 88] road count: 60
-[2019-03-27 20:13:53] INFO [load_data_and_build_graph: getSolution.py, 89] load data complete
-[2019-03-27 20:13:53] INFO [load_data_and_build_graph: getSolution.py, 93] Floyd init complete
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 100] vertex count: 36
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 101] schedule car batch size: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 1
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 2
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 3
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 4
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 5
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 6
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 7
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 8
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 9
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 10
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 11
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 116] time slice: 12
-[2019-03-27 20:13:53] INFO [compute_result: getSolution.py, 123] got scheduling car set length: 30
-[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 26] car_path is config_5/car.txt
-[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 27] road_path is config_5/road.txt
-[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 28] cross_path is config_5/cross.txt
-[2019-03-27 20:23:45] INFO [main: CodeCraft-2019.py, 29] answer_path is config_5/answer.txt
-[2019-03-27 20:23:45] INFO [load_data_and_build_graph: getSolution.py, 54] car count: 512
-[2019-03-27 20:23:45] INFO [load_data_and_build_graph: getSolution.py, 84] road count: 60
-[2019-03-27 20:23:45] INFO [load_data_and_build_graph: getSolution.py, 85] load data complete
-[2019-03-27 20:23:46] INFO [load_data_and_build_graph: getSolution.py, 89] Floyd init complete
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 96] vertex count: 36
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 97] schedule car batch size: 30
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 1
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 2
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 3
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 112] time slice: 4
-[2019-03-27 20:23:46] INFO [compute_result: getSolution.py, 119] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 26] car_path is config_5/car.txt
-[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 27] road_path is config_5/road.txt
-[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 28] cross_path is config_5/cross.txt
-[2019-03-27 20:38:51] INFO [main: CodeCraft-2019.py, 29] answer_path is config_5/answer.txt
-[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 51] car count: 512
-[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 79] road count: 60
-[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 80] vertex count: 36
-[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 81] load data complete
-[2019-03-27 20:38:51] INFO [load_data_and_build_graph: getSolution.py, 85] Floyd init complete
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 92] schedule car batch size: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 1
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 2
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 3
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 4
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 5
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 6
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 7
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 8
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 9
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 10
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 11
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 12
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 13
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 14
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 15
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 16
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 17
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 30
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 107] time slice: 18
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 2
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 102] has no pending car in buffer! Done
-[2019-03-27 20:38:51] INFO [compute_result: getSolution.py, 145] total time slice: 18
-[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 26] car_path is config_10/car.txt
-[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 27] road_path is config_10/road.txt
-[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 28] cross_path is config_10/cross.txt
-[2019-03-27 20:39:13] INFO [main: CodeCraft-2019.py, 29] answer_path is config_10/answer.txt
-[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 51] car count: 2048
-[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 79] road count: 58
-[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 80] vertex count: 36
-[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 81] load data complete
-[2019-03-27 20:39:14] INFO [load_data_and_build_graph: getSolution.py, 85] Floyd init complete
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 92] schedule car batch size: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 1
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 2
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 3
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 4
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 5
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 6
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 7
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 8
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 9
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 10
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 11
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 12
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 13
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 14
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 15
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 16
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 17
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 18
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 19
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 20
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 21
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 22
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 23
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 24
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 25
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 26
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 27
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 28
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 29
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 30
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 31
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 32
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 33
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 34
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 35
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 57
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 107] time slice: 36
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 114] got scheduling car set length: 53
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 102] has no pending car in buffer! Done
-[2019-03-27 20:39:14] INFO [compute_result: getSolution.py, 145] total time slice: 36
+[2019-03-28 19:06:04] INFO [main: CodeCraft-2019.py, 27] car_path is config_3/car.txt
+[2019-03-28 19:06:04] INFO [main: CodeCraft-2019.py, 28] road_path is config_3/road.txt
+[2019-03-28 19:06:04] INFO [main: CodeCraft-2019.py, 29] cross_path is config_3/cross.txt
+[2019-03-28 19:06:04] INFO [main: CodeCraft-2019.py, 30] answer_path is config_3/answer.txt
+[2019-03-28 19:06:04] INFO [load_data_and_build_graph: getSolution.py, 61] car count: 512
+[2019-03-28 19:06:04] INFO [load_data_and_build_graph: getSolution.py, 90] road count: 60
+[2019-03-28 19:06:04] INFO [load_data_and_build_graph: getSolution.py, 91] vertex count: 36
+[2019-03-28 19:06:04] INFO [load_data_and_build_graph: getSolution.py, 92] load data complete
+[2019-03-28 19:06:04] INFO [load_data_and_build_graph: getSolution.py, 96] Floyd init complete
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 103] schedule car batch size: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10001. Search node 27 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10001 shortest path: deque(['27', '21', '20', '14', '8', '2', '1', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10002. Search node 29 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10002 shortest path: deque(['29', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10046. Search node 29 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10046 shortest path: deque(['29', '23', '22', '21', '20', '14', '15', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10025. Search node 31 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10025 shortest path: deque(['31', '32', '33', '27', '21', '22', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10036. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10036 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10078. Search node 32 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10078 shortest path: deque(['32', '31', '25', '19', '13', '14', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10057. Search node 31 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10057 shortest path: deque(['31', '25', '19', '13', '14', '15', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10026. Search node 3 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10026 shortest path: deque(['3', '9', '15', '16', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10079. Search node 9 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10079 shortest path: deque(['9', '15', '21', '27', '33', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10058. Search node 27 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10058 shortest path: deque(['27', '21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10004. Search node 2 to node 21
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10004 shortest path: deque(['2', '8', '14', '15', '16', '22', '21'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10068. Search node 10 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10068 shortest path: deque(['10', '16', '22', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10049. Search node 24 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10049 shortest path: deque(['24', '18', '12', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10069. Search node 31 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10069 shortest path: deque(['31', '32', '33', '27', '28', '22', '23', '17', '11', '5', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10028. Search node 1 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10028 shortest path: deque(['1', '2', '3', '9', '15', '16', '22', '23', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10017. Search node 3 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10017 shortest path: deque(['3', '9', '15', '21', '27', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10050. Search node 33 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10050 shortest path: deque(['33', '32', '26', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10071. Search node 23 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10071 shortest path: deque(['23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10018. Search node 25 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10018 shortest path: deque(['25', '19', '20', '14', '8', '9', '10', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10061. Search node 26 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10061 shortest path: deque(['26', '20', '14', '8', '2', '1', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10041. Search node 14 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10041 shortest path: deque(['14', '15', '16', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10062. Search node 14 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10062 shortest path: deque(['14', '20', '26', '32', '33', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10031. Search node 23 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10031 shortest path: deque(['23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10009. Search node 14 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10009 shortest path: deque(['14', '13', '19', '25', '31', '32', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10042. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10042 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10010. Search node 7 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10010 shortest path: deque(['7', '13', '19', '20', '21', '27', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10054. Search node 30 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10054 shortest path: deque(['30', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10033. Search node 12 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10033 shortest path: deque(['12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10044. Search node 31 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10044 shortest path: deque(['31', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10000. Search node 33 to node 11
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10000 shortest path: deque(['33', '34', '35', '29', '23', '17', '11'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10154. Search node 26 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10154 shortest path: deque(['26', '20', '14', '8', '9', '10', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10143. Search node 7 to node 25
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10143 shortest path: deque(['7', '13', '19', '25'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10166. Search node 8 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10166 shortest path: deque(['8', '14', '20', '19', '25', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10153. Search node 24 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10153 shortest path: deque(['24', '18', '12', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10144. Search node 4 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10144 shortest path: deque(['4', '5', '6', '12', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10133. Search node 33 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10133 shortest path: deque(['33', '27', '21', '22', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10089. Search node 36 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10089 shortest path: deque(['36', '35', '34', '33', '32', '31', '25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10122. Search node 29 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10122 shortest path: deque(['29', '23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10145. Search node 15 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10145 shortest path: deque(['15', '21', '27', '28', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10123. Search node 4 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10123 shortest path: deque(['4', '3', '9', '15', '21', '20', '26', '32', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10101. Search node 11 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10101 shortest path: deque(['11', '12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10169. Search node 33 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10169 shortest path: deque(['33', '27', '21', '22', '16', '10', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10136. Search node 19 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10136 shortest path: deque(['19', '13', '14', '8', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10082. Search node 19 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10082 shortest path: deque(['19', '13', '14', '8', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10137. Search node 6 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10137 shortest path: deque(['6', '12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10103. Search node 17 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10103 shortest path: deque(['17', '23', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10160. Search node 14 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10160 shortest path: deque(['14', '20', '26', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10171. Search node 6 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10171 shortest path: deque(['6', '12', '18', '24', '30', '29', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10126. Search node 6 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10126 shortest path: deque(['6', '12', '18', '24', '30', '36', '35', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10115. Search node 10 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10115 shortest path: deque(['10', '16', '22', '28', '29', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10138. Search node 6 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10138 shortest path: deque(['6', '12', '11', '17', '23', '29', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10094. Search node 31 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10094 shortest path: deque(['31', '25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10127. Search node 24 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10127 shortest path: deque(['24', '18', '12', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10116. Search node 9 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10116 shortest path: deque(['9', '15', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10151. Search node 21 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10151 shortest path: deque(['21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10117. Search node 26 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10117 shortest path: deque(['26', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10174. Search node 8 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10174 shortest path: deque(['8', '14', '15', '16', '17', '23', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10129. Search node 5 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10129 shortest path: deque(['5', '11', '10', '16', '22', '28', '27', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10086. Search node 16 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10086 shortest path: deque(['16', '17', '23', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10097. Search node 16 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10097 shortest path: deque(['16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10240. Search node 31 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10240 shortest path: deque(['31', '25', '19', '13', '14', '15', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10198. Search node 36 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10198 shortest path: deque(['36', '30', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10252. Search node 12 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10252 shortest path: deque(['12', '18', '24', '30', '36', '35', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10231. Search node 32 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10231 shortest path: deque(['32', '33', '27', '21', '22', '16', '10', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10199. Search node 31 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10199 shortest path: deque(['31', '25', '19', '13', '7', '1', '2', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10178. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10178 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10200. Search node 5 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10200 shortest path: deque(['5', '11', '10', '16', '22', '28', '34', '33', '32', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10232. Search node 14 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10232 shortest path: deque(['14', '20', '26', '27', '28', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10211. Search node 8 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10211 shortest path: deque(['8', '14', '20', '21', '22', '23', '29', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10190. Search node 30 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10190 shortest path: deque(['30', '29', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10180. Search node 32 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10180 shortest path: deque(['32', '33', '27', '21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10212. Search node 23 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10212 shortest path: deque(['23', '22', '21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10233. Search node 15 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10233 shortest path: deque(['15', '21', '20', '26', '32', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10255. Search node 35 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10255 shortest path: deque(['35', '36', '30', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10191. Search node 14 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10191 shortest path: deque(['14', '20', '26', '32', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10224. Search node 17 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10224 shortest path: deque(['17', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10234. Search node 17 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10234 shortest path: deque(['17', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10192. Search node 7 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10192 shortest path: deque(['7', '13', '19', '25', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10247. Search node 7 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10247 shortest path: deque(['7', '13', '19', '20', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10194. Search node 23 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10194 shortest path: deque(['23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10205. Search node 9 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10205 shortest path: deque(['9', '15', '21', '22', '23', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10248. Search node 4 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10248 shortest path: deque(['4', '10', '16', '22', '28', '27', '26', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10227. Search node 17 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10227 shortest path: deque(['17', '23', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10185. Search node 14 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10185 shortest path: deque(['14', '20', '21', '27', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10195. Search node 15 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10195 shortest path: deque(['15', '21', '27', '33', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10259. Search node 14 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10259 shortest path: deque(['14', '15', '16', '22', '23', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10260. Search node 9 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10260 shortest path: deque(['9', '10', '16', '22', '28', '34', '33', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10250. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10250 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10229. Search node 1 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10229 shortest path: deque(['1', '2', '3', '9', '15', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10251. Search node 24 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10251 shortest path: deque(['24', '23', '22', '16', '10', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10369. Search node 9 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10369 shortest path: deque(['9', '15', '16', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10348. Search node 14 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10348 shortest path: deque(['14', '20', '21', '27', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10306. Search node 6 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10306 shortest path: deque(['6', '12', '18', '24', '30', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10274. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10274 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10338. Search node 7 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10338 shortest path: deque(['7', '13', '19', '20', '21', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10329. Search node 6 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10329 shortest path: deque(['6', '12', '18', '17', '23', '29', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10286. Search node 13 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10286 shortest path: deque(['13', '19', '25', '31', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10275. Search node 32 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10275 shortest path: deque(['32', '31', '25', '19', '13', '14', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10360. Search node 25 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10360 shortest path: deque(['25', '19', '13', '14', '15', '9', '10', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10350. Search node 6 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10350 shortest path: deque(['6', '12', '18', '24', '30', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10265. Search node 34 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10265 shortest path: deque(['34', '33', '27', '21', '15', '9', '10', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10351. Search node 36 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10351 shortest path: deque(['36', '30', '24', '18', '12', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10277. Search node 4 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10277 shortest path: deque(['4', '5', '6', '12', '18', '24', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10288. Search node 14 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10288 shortest path: deque(['14', '15', '16', '17', '23', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10352. Search node 36 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10352 shortest path: deque(['36', '30', '24', '18', '12', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10341. Search node 36 to node 18
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10341 shortest path: deque(['36', '30', '24', '18'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10310. Search node 27 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10310 shortest path: deque(['27', '21', '15', '9', '10', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10332. Search node 33 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10332 shortest path: deque(['33', '32', '31', '25', '19', '13', '14', '15', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10353. Search node 3 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10353 shortest path: deque(['3', '9', '15', '21', '20', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10354. Search node 28 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10354 shortest path: deque(['28', '22', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10269. Search node 27 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10269 shortest path: deque(['27', '21', '22', '23', '24', '18', '12', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10313. Search node 19 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10313 shortest path: deque(['19', '13', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10334. Search node 10 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10334 shortest path: deque(['10', '16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10368. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10368 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10345. Search node 2 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10345 shortest path: deque(['2', '8', '14', '20', '21', '27', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10271. Search node 13 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10271 shortest path: deque(['13', '19', '25', '26', '32', '33', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10326. Search node 12 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10326 shortest path: deque(['12', '18', '24', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10367. Search node 21 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10367 shortest path: deque(['21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10272. Search node 33 to node 15
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10272 shortest path: deque(['33', '27', '21', '20', '14', '8', '9', '15'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10347. Search node 12 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10347 shortest path: deque(['12', '11', '17', '16', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10413. Search node 34 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10413 shortest path: deque(['34', '35', '36', '30', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10436. Search node 10 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10436 shortest path: deque(['10', '16', '22', '23', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10425. Search node 6 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10425 shortest path: deque(['6', '12', '18', '24', '30', '29', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10414. Search node 27 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10414 shortest path: deque(['27', '21', '22', '16', '10', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10393. Search node 3 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10393 shortest path: deque(['3', '9', '8', '14', '20', '26', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10447. Search node 23 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10447 shortest path: deque(['23', '22', '21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10383. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10383 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10438. Search node 20 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10438 shortest path: deque(['20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10395. Search node 29 to node 11
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10395 shortest path: deque(['29', '23', '17', '18', '12', '11'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10384. Search node 11 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10384 shortest path: deque(['11', '17', '23', '29', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10405. Search node 32 to node 14
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10405 shortest path: deque(['32', '26', '20', '14'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10450. Search node 11 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10450 shortest path: deque(['11', '17', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10417. Search node 5 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10417 shortest path: deque(['5', '6', '12', '18', '24', '30', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10385. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10385 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10429. Search node 26 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10429 shortest path: deque(['26', '20', '14', '8', '9', '10', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10451. Search node 16 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10451 shortest path: deque(['16', '17', '23', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10418. Search node 15 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10418 shortest path: deque(['15', '21', '27', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10376. Search node 10 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10376 shortest path: deque(['10', '16', '22', '28', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10419. Search node 35 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10419 shortest path: deque(['35', '29', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10408. Search node 14 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10408 shortest path: deque(['14', '15', '21', '27', '33', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10377. Search node 23 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10377 shortest path: deque(['23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10420. Search node 23 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10420 shortest path: deque(['23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10399. Search node 10 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10399 shortest path: deque(['10', '16', '22', '28', '29', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10453. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10453 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10421. Search node 21 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10421 shortest path: deque(['21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10400. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10400 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10411. Search node 22 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10411 shortest path: deque(['22', '21', '20', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10434. Search node 10 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10434 shortest path: deque(['10', '16', '22', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10401. Search node 36 to node 15
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10401 shortest path: deque(['36', '35', '29', '23', '22', '21', '20', '14', '15'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10445. Search node 27 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10445 shortest path: deque(['27', '21', '22', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10488. Search node 13 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10488 shortest path: deque(['13', '14', '20', '26', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10478. Search node 2 to node 22
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10478 shortest path: deque(['2', '3', '9', '15', '21', '22'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10013. Search node 27 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10013 shortest path: deque(['27', '21', '20', '14', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10509. Search node 13 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10509 shortest path: deque(['13', '19', '25', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10499. Search node 34 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10499 shortest path: deque(['34', '33', '27', '21', '20', '14', '8', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10467. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10467 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10014. Search node 32 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10014 shortest path: deque(['32', '33', '27', '21', '15', '9', '10', '11', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10510. Search node 15 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10510 shortest path: deque(['15', '16', '17', '23', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10458. Search node 27 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10458 shortest path: deque(['27', '21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10480. Search node 10 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10480 shortest path: deque(['10', '16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10501. Search node 31 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10501 shortest path: deque(['31', '25', '19', '13', '14', '15', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10016. Search node 35 to node 16
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10016 shortest path: deque(['35', '29', '23', '17', '16'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10460. Search node 24 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10460 shortest path: deque(['24', '23', '22', '16', '10', '9', '3', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10491. Search node 36 to node 18
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10491 shortest path: deque(['36', '30', '24', '18'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10472. Search node 16 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10472 shortest path: deque(['16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10504. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10504 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10008. Search node 7 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10008 shortest path: deque(['7', '13', '19', '25', '26', '32', '33', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10494. Search node 7 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10494 shortest path: deque(['7', '13', '14', '20', '21', '27', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10473. Search node 16 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10473 shortest path: deque(['16', '17', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10020. Search node 26 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10020 shortest path: deque(['26', '20', '14', '8', '9', '10', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10485. Search node 14 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10485 shortest path: deque(['14', '20', '21', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10495. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10495 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10474. Search node 8 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10474 shortest path: deque(['8', '14', '15', '16', '17', '23', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10506. Search node 11 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10506 shortest path: deque(['11', '12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10496. Search node 35 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10496 shortest path: deque(['35', '29', '23', '22', '21', '20', '14', '8', '2', '1', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10507. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10507 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10455. Search node 9 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10455 shortest path: deque(['9', '8', '7', '13', '19', '20', '26', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10487. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10487 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10012. Search node 2 to node 21
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10012 shortest path: deque(['2', '3', '9', '10', '16', '22', '21'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10477. Search node 26 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10477 shortest path: deque(['26', '20', '14', '8', '9', '10', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10034. Search node 22 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10034 shortest path: deque(['22', '16', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10024. Search node 8 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10024 shortest path: deque(['8', '14', '20', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10066. Search node 30 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10066 shortest path: deque(['30', '24', '18', '12', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10035. Search node 36 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10035 shortest path: deque(['36', '30', '29', '23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10056. Search node 22 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10056 shortest path: deque(['22', '21', '20', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10087. Search node 34 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10087 shortest path: deque(['34', '28', '22', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10098. Search node 27 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10098 shortest path: deque(['27', '21', '22', '16', '10', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10067. Search node 30 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10067 shortest path: deque(['30', '29', '23', '22', '21', '15', '9', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10047. Search node 29 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10047 shortest path: deque(['29', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10037. Search node 17 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10037 shortest path: deque(['17', '23', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10070. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10070 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10039. Search node 16 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10039 shortest path: deque(['16', '22', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10060. Search node 2 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10060 shortest path: deque(['2', '3', '9', '15', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10081. Search node 10 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10081 shortest path: deque(['10', '16', '22', '28', '34', '35', '36', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10102. Search node 29 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10102 shortest path: deque(['29', '23', '22', '21', '20', '14', '15', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10029. Search node 15 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10029 shortest path: deque(['15', '16', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10051. Search node 16 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10051 shortest path: deque(['16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10072. Search node 12 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10072 shortest path: deque(['12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10083. Search node 12 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10083 shortest path: deque(['12', '18', '17', '23', '29', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10104. Search node 32 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10104 shortest path: deque(['32', '33', '27', '21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10052. Search node 3 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10052 shortest path: deque(['3', '9', '8', '14', '20', '26', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10076. Search node 6 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10076 shortest path: deque(['6', '12', '18', '24', '23', '29', '28', '27', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10073. Search node 27 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10073 shortest path: deque(['27', '21', '20', '14', '8', '2', '1', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10063. Search node 12 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10063 shortest path: deque(['12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10032. Search node 34 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10032 shortest path: deque(['34', '33', '32', '26', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10021. Search node 32 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10021 shortest path: deque(['32', '26', '20', '14', '8', '9', '10', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10064. Search node 14 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10064 shortest path: deque(['14', '20', '21', '27', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10075. Search node 8 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10075 shortest path: deque(['8', '14', '20', '21', '22', '23', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10055. Search node 17 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10055 shortest path: deque(['17', '18', '24', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10023. Search node 5 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10023 shortest path: deque(['5', '6', '12', '18', '24', '30', '29', '28', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10177. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10177 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10109. Search node 23 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10109 shortest path: deque(['23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10188. Search node 12 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10188 shortest path: deque(['12', '18', '17', '23', '22', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10156. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10156 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10110. Search node 26 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10110 shortest path: deque(['26', '20', '14', '8', '9', '10', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10179. Search node 7 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10179 shortest path: deque(['7', '13', '14', '20', '21', '27', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10168. Search node 5 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10168 shortest path: deque(['5', '4', '10', '16', '22', '28', '34', '33', '32', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10134. Search node 16 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10134 shortest path: deque(['16', '22', '28', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10112. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10112 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10158. Search node 11 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10158 shortest path: deque(['11', '17', '23', '29', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10181. Search node 3 to node 23
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10181 shortest path: deque(['3', '9', '10', '16', '22', '23'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10147. Search node 22 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10147 shortest path: deque(['22', '23', '17', '11', '5', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10170. Search node 10 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10170 shortest path: deque(['10', '16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10197. Search node 21 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10197 shortest path: deque(['21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10125. Search node 13 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10125 shortest path: deque(['13', '19', '20', '21', '27', '33', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10148. Search node 3 to node 23
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10148 shortest path: deque(['3', '9', '10', '16', '22', '23'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10183. Search node 22 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10183 shortest path: deque(['22', '23', '17', '11', '5', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10193. Search node 25 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10193 shortest path: deque(['25', '19', '13', '14', '8', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10149. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10149 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10172. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10172 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10161. Search node 8 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10161 shortest path: deque(['8', '14', '20', '26', '32', '33', '34', '35', '36', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10184. Search node 31 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10184 shortest path: deque(['31', '25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10105. Search node 11 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10105 shortest path: deque(['11', '17', '23', '29', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10107. Search node 29 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10107 shortest path: deque(['29', '23', '17', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10196. Search node 6 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10196 shortest path: deque(['6', '12', '18', '17', '23', '29', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10175. Search node 28 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10175 shortest path: deque(['28', '22', '16', '10', '9', '3', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10164. Search node 31 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10164 shortest path: deque(['31', '25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10130. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10130 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10176. Search node 9 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10176 shortest path: deque(['9', '15', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10187. Search node 14 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10187 shortest path: deque(['14', '20', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10273. Search node 3 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10273 shortest path: deque(['3', '9', '15', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10220. Search node 15 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10220 shortest path: deque(['15', '21', '27', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10285. Search node 23 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10285 shortest path: deque(['23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10209. Search node 32 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10209 shortest path: deque(['32', '33', '27', '21', '22', '23', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10241. Search node 2 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10241 shortest path: deque(['2', '3', '9', '15', '21', '27', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10210. Search node 23 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10210 shortest path: deque(['23', '17', '11', '5', '4', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10254. Search node 23 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10254 shortest path: deque(['23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10243. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10243 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10287. Search node 35 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10287 shortest path: deque(['35', '29', '23', '17', '11', '5', '4', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10276. Search node 9 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10276 shortest path: deque(['9', '15', '21', '27', '28', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10201. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10201 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10223. Search node 5 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10223 shortest path: deque(['5', '11', '17', '23', '29', '28', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10202. Search node 15 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10202 shortest path: deque(['15', '21', '27', '28', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10213. Search node 28 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10213 shortest path: deque(['28', '27', '21', '20', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10278. Search node 35 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10278 shortest path: deque(['35', '29', '23', '22', '21', '20', '14', '15', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10245. Search node 14 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10245 shortest path: deque(['14', '20', '21', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10289. Search node 14 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10289 shortest path: deque(['14', '20', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10279. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10279 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10268. Search node 30 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10268 shortest path: deque(['30', '29', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10257. Search node 7 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10257 shortest path: deque(['7', '13', '14', '20', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10215. Search node 27 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10215 shortest path: deque(['27', '21', '20', '14', '8', '2', '1', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10236. Search node 3 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10236 shortest path: deque(['3', '9', '15', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10204. Search node 11 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10204 shortest path: deque(['11', '17', '23', '22', '28', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10226. Search node 13 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10226 shortest path: deque(['13', '19', '20', '21', '27', '28', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10258. Search node 14 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10258 shortest path: deque(['14', '20', '21', '27', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10282. Search node 25 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10282 shortest path: deque(['25', '19', '13', '14', '15', '9', '10', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10238. Search node 35 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10238 shortest path: deque(['35', '36', '30', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10218. Search node 7 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10218 shortest path: deque(['7', '13', '14', '20', '21', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10261. Search node 7 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10261 shortest path: deque(['7', '13', '19', '20', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10219. Search node 32 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10219 shortest path: deque(['32', '26', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10337. Search node 11 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10337 shortest path: deque(['11', '17', '23', '22', '28', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10358. Search node 35 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10358 shortest path: deque(['35', '34', '33', '32', '26', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10318. Search node 26 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10318 shortest path: deque(['26', '20', '21', '22', '23', '17', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10359. Search node 9 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10359 shortest path: deque(['9', '15', '21', '27', '28', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10371. Search node 1 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10371 shortest path: deque(['1', '2', '3', '9', '15', '16', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10339. Search node 10 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10339 shortest path: deque(['10', '16', '22', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10320. Search node 5 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10320 shortest path: deque(['5', '6', '12', '18', '17', '23', '22', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10340. Search node 27 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10340 shortest path: deque(['27', '21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10309. Search node 15 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10309 shortest path: deque(['15', '21', '27', '28', '34', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10373. Search node 26 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10373 shortest path: deque(['26', '20', '21', '22', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10321. Search node 16 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10321 shortest path: deque(['16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10362. Search node 10 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10362 shortest path: deque(['10', '16', '22', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10374. Search node 25 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10374 shortest path: deque(['25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10342. Search node 35 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10342 shortest path: deque(['35', '36', '30', '24', '18', '12', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10323. Search node 35 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10323 shortest path: deque(['35', '29', '23', '17', '11', '5', '4', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10333. Search node 11 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10333 shortest path: deque(['11', '17', '23', '22', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10343. Search node 5 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10343 shortest path: deque(['5', '6', '12', '18', '17', '23', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10290. Search node 11 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10290 shortest path: deque(['11', '17', '23', '22', '28', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10324. Search node 16 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10324 shortest path: deque(['16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10325. Search node 27 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10325 shortest path: deque(['27', '21', '22', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10302. Search node 12 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10302 shortest path: deque(['12', '18', '17', '23', '29', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10314. Search node 4 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10314 shortest path: deque(['4', '3', '9', '15', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10366. Search node 36 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10366 shortest path: deque(['36', '30', '29', '23', '22', '21', '20', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10356. Search node 11 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10356 shortest path: deque(['11', '12', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10293. Search node 32 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10293 shortest path: deque(['32', '31', '25', '19', '13', '7', '1', '2', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10315. Search node 5 to node 24
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10315 shortest path: deque(['5', '6', '12', '18', '24'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10336. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10336 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10294. Search node 31 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10294 shortest path: deque(['31', '25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10316. Search node 33 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10316 shortest path: deque(['33', '27', '21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10327. Search node 31 to node 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10327 shortest path: deque(['31', '32', '33', '34', '35', '36', '30', '24', '18', '12'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 11
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10435. Search node 2 to node 23
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10435 shortest path: deque(['2', '8', '14', '20', '21', '22', '23'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10456. Search node 33 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10456 shortest path: deque(['33', '32', '26', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10424. Search node 31 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10424 shortest path: deque(['31', '25', '19', '13', '14', '15', '9', '10', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10446. Search node 30 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10446 shortest path: deque(['30', '29', '23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10392. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10392 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10457. Search node 12 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10457 shortest path: deque(['12', '18', '17', '23', '29', '28', '27', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10382. Search node 29 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10382 shortest path: deque(['29', '23', '17', '11', '10', '9', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10437. Search node 17 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10437 shortest path: deque(['17', '23', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10426. Search node 4 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10426 shortest path: deque(['4', '10', '16', '22', '21', '20', '19', '25', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10448. Search node 25 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10448 shortest path: deque(['25', '26', '27', '28', '29', '23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10394. Search node 1 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10394 shortest path: deque(['1', '2', '3', '9', '15', '21', '27', '28', '34', '35', '36', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10427. Search node 31 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10427 shortest path: deque(['31', '25', '19', '13', '14', '15', '9', '10', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10416. Search node 1 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10416 shortest path: deque(['1', '2', '3', '9', '15', '14', '20', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10439. Search node 29 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10439 shortest path: deque(['29', '23', '22', '21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10428. Search node 26 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10428 shortest path: deque(['26', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10375. Search node 28 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10375 shortest path: deque(['28', '27', '21', '20', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10397. Search node 33 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10397 shortest path: deque(['33', '27', '21', '22', '23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10407. Search node 6 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10407 shortest path: deque(['6', '12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10430. Search node 31 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10430 shortest path: deque(['31', '25', '19', '13', '7', '1', '2', '3', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10398. Search node 32 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10398 shortest path: deque(['32', '31', '25', '19', '13', '14', '8', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10441. Search node 11 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10441 shortest path: deque(['11', '12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10431. Search node 2 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10431 shortest path: deque(['2', '3', '9', '15', '14', '13', '19', '25', '31', '32', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10387. Search node 31 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10387 shortest path: deque(['31', '25', '19', '13', '14', '15', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10432. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10432 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10409. Search node 29 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10409 shortest path: deque(['29', '23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10443. Search node 11 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10443 shortest path: deque(['11', '17', '23', '29', '28', '34', '33', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10433. Search node 6 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10433 shortest path: deque(['6', '12', '18', '24', '23', '29', '28', '27', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10444. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10444 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10380. Search node 31 to node 10
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10380 shortest path: deque(['31', '25', '19', '13', '14', '15', '16', '10'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10423. Search node 8 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10423 shortest path: deque(['8', '14', '20', '21', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 12
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10498. Search node 30 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10498 shortest path: deque(['30', '29', '23', '17', '11', '5', '4', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10479. Search node 32 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10479 shortest path: deque(['32', '31', '25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10489. Search node 14 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10489 shortest path: deque(['14', '20', '21', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10003. Search node 4 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10003 shortest path: deque(['4', '10', '16', '22', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10468. Search node 5 to node 28
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10468 shortest path: deque(['5', '4', '10', '16', '22', '28'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10500. Search node 31 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10500 shortest path: deque(['31', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10015. Search node 9 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10015 shortest path: deque(['9', '15', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10490. Search node 17 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10490 shortest path: deque(['17', '23', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10511. Search node 33 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10511 shortest path: deque(['33', '27', '21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10027. Search node 3 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10027 shortest path: deque(['3', '9', '15', '16', '22', '28', '34', '35', '36', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10038. Search node 22 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10038 shortest path: deque(['22', '21', '20', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10005. Search node 6 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10005 shortest path: deque(['6', '12', '18', '17', '23', '22', '21', '20', '26', '32', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10470. Search node 22 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10470 shortest path: deque(['22', '16', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10006. Search node 29 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10006 shortest path: deque(['29', '23', '22', '21', '20', '14', '15', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10461. Search node 5 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10461 shortest path: deque(['5', '11', '17', '23', '22', '21', '27', '33', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10503. Search node 9 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10503 shortest path: deque(['9', '15', '21', '27', '28', '29', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10483. Search node 8 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10483 shortest path: deque(['8', '14', '20', '21', '22', '28', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10007. Search node 23 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10007 shortest path: deque(['23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10040. Search node 20 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10040 shortest path: deque(['20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10462. Search node 15 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10462 shortest path: deque(['15', '21', '27', '26', '32', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10030. Search node 2 to node 24
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10030 shortest path: deque(['2', '8', '14', '20', '21', '22', '16', '17', '18', '24'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10019. Search node 20 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10019 shortest path: deque(['20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10484. Search node 32 to node 14
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10484 shortest path: deque(['32', '26', '20', '14'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10463. Search node 10 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10463 shortest path: deque(['10', '16', '22', '28', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10464. Search node 2 to node 29
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10464 shortest path: deque(['2', '3', '9', '15', '21', '27', '28', '29'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10043. Search node 32 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10043 shortest path: deque(['32', '33', '27', '21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10011. Search node 29 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10011 shortest path: deque(['29', '23', '22', '21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10022. Search node 12 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10022 shortest path: deque(['12', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10497. Search node 17 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10497 shortest path: deque(['17', '18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10466. Search node 16 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10466 shortest path: deque(['16', '22', '28', '29', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10045. Search node 17 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10045 shortest path: deque(['17', '23', '29', '35', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10108. Search node 19 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10108 shortest path: deque(['19', '13', '14', '8', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10077. Search node 4 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10077 shortest path: deque(['4', '10', '16', '22', '21', '20', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10120. Search node 20 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10120 shortest path: deque(['20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10088. Search node 23 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10088 shortest path: deque(['23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10121. Search node 26 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10121 shortest path: deque(['26', '20', '14', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10099. Search node 18 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10099 shortest path: deque(['18', '24', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10100. Search node 21 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10100 shortest path: deque(['21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10048. Search node 3 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10048 shortest path: deque(['3', '9', '15', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10111. Search node 19 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10111 shortest path: deque(['19', '13', '14', '8', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10090. Search node 12 to node 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10090 shortest path: deque(['12', '18', '24', '30'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10080. Search node 16 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10080 shortest path: deque(['16', '22', '23', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10059. Search node 34 to node 14
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10059 shortest path: deque(['34', '33', '32', '26', '25', '19', '13', '14'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10124. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10124 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10091. Search node 34 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10091 shortest path: deque(['34', '33', '27', '21', '20', '14', '8', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10113. Search node 23 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10113 shortest path: deque(['23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10092. Search node 3 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10092 shortest path: deque(['3', '9', '15', '21', '27', '33', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10114. Search node 31 to node 9
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10114 shortest path: deque(['31', '32', '33', '27', '21', '15', '9'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10093. Search node 27 to node 6
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10093 shortest path: deque(['27', '21', '22', '16', '17', '11', '5', '6'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10084. Search node 28 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10084 shortest path: deque(['28', '22', '23', '17', '11', '5', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10095. Search node 8 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10095 shortest path: deque(['8', '14', '20', '21', '27', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10053. Search node 6 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10053 shortest path: deque(['6', '12', '18', '17', '23', '22', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10128. Search node 17 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10128 shortest path: deque(['17', '23', '22', '28', '34', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10074. Search node 25 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10074 shortest path: deque(['25', '19', '13', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10085. Search node 16 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10085 shortest path: deque(['16', '22', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10096. Search node 16 to node 36
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10096 shortest path: deque(['16', '22', '28', '29', '30', '36'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10106. Search node 10 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10106 shortest path: deque(['10', '16', '22', '23', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10118. Search node 25 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10118 shortest path: deque(['25', '19', '13', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10119. Search node 23 to node 5
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10119 shortest path: deque(['23', '17', '11', '5'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10065. Search node 12 to node 33
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10065 shortest path: deque(['12', '18', '17', '23', '22', '28', '34', '33'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 118] time slice: 14
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 128] got scheduling car set length: 30
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10131. Search node 1 to node 31
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10131 shortest path: deque(['1', '7', '13', '19', '25', '26', '32', '31'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10165. Search node 35 to node 14
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10165 shortest path: deque(['35', '29', '23', '22', '21', '20', '14'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10132. Search node 23 to node 2
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10132 shortest path: deque(['23', '22', '21', '20', '14', '8', '2'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10155. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10155 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10221. Search node 3 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10221 shortest path: deque(['3', '9', '15', '16', '22', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10167. Search node 4 to node 24
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10167 shortest path: deque(['4', '10', '16', '22', '23', '17', '18', '24'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10189. Search node 16 to node 34
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10189 shortest path: deque(['16', '22', '28', '34'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10222. Search node 28 to node 8
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10222 shortest path: deque(['28', '29', '23', '17', '11', '10', '9', '8'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10157. Search node 3 to node 23
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10157 shortest path: deque(['3', '9', '10', '16', '22', '23'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10146. Search node 1 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10146 shortest path: deque(['1', '2', '3', '9', '15', '16', '22', '28', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10135. Search node 25 to node 7
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10135 shortest path: deque(['25', '19', '13', '7'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10159. Search node 27 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10159 shortest path: deque(['27', '21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10182. Search node 4 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10182 shortest path: deque(['4', '3', '9', '15', '14', '20', '26', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10214. Search node 34 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10214 shortest path: deque(['34', '28', '22', '16', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10203. Search node 13 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10203 shortest path: deque(['13', '14', '20', '21', '27', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10216. Search node 21 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10216 shortest path: deque(['21', '15', '9', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10150. Search node 7 to node 26
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10150 shortest path: deque(['7', '13', '14', '20', '21', '27', '26'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10139. Search node 7 to node 25
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10139 shortest path: deque(['7', '13', '14', '20', '26', '25'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10173. Search node 25 to node 3
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10173 shortest path: deque(['25', '19', '13', '14', '8', '2', '3'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10162. Search node 21 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10162 shortest path: deque(['21', '20', '14', '8', '7', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10217. Search node 13 to node 35
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10217 shortest path: deque(['13', '14', '20', '21', '22', '28', '29', '30', '36', '35'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10140. Search node 3 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10140 shortest path: deque(['3', '9', '15', '16', '22', '28', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10206. Search node 6 to node 32
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10206 shortest path: deque(['6', '5', '11', '17', '23', '22', '21', '27', '33', '32'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10163. Search node 29 to node 1
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10163 shortest path: deque(['29', '23', '17', '11', '10', '9', '3', '2', '1'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10152. Search node 5 to node 27
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10152 shortest path: deque(['5', '11', '17', '23', '22', '21', '27'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10186. Search node 34 to node 13
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10186 shortest path: deque(['34', '33', '32', '26', '25', '19', '13'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10207. Search node 34 to node 4
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10207 shortest path: deque(['34', '28', '29', '23', '17', '11', '10', '9', '3', '4'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10141. Search node 34 to node 15
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 140] car: 10141 shortest path: deque(['34', '33', '27', '21', '20', '14', '15'])
+[2019-03-28 19:06:04] INFO [compute_result: getSolution.py, 134] schedule car: 10208. Search node 28 to node 5

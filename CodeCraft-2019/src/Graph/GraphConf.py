@@ -2,7 +2,6 @@
 # @Time    : 2019/3/26 9:18
 # @Author  : MLee
 # @File    : GraphConf.py
-import logging
 import math
 from collections import deque
 
@@ -14,7 +13,7 @@ class Car(object):
         super(Car, self).__init__()
         self.car_id, self.car_from, self.car_to, self.speed, self.plan_time = car_conf
         self.true_start_time = 0
-        self.plan_path = deque()
+        # self.plan_path = deque()
         self.plan_path_list = list()
 
 
@@ -129,9 +128,21 @@ class Graph(object):
 
         return start_adjacent.get(end, None)
 
+    def get_edge_form_id(self, edge_id):
+        return self.edge_dict.get(edge_id, None)
+
     def get_adjacent_edge_id(self, start_vertex, end_vertex):
         edge_id = self.adjacent_edge_dict[start_vertex][end_vertex]
 
         # 反向边是以 “_b” 符号连接的
         edge_id = edge_id.replace("_b", "")
         return edge_id
+
+    def get_graph_dict(self):
+        return self.graph_dict
+
+    def get_edge_dict(self):
+        return self.edge_dict
+
+    def get_adjacent_edge_dict(self):
+        return self.adjacent_edge_dict
