@@ -2,18 +2,16 @@
 import logging
 import sys
 
-from simulator import CheckAnswer
-from solution.getSolution import GetSolution
+from AdjustArg.AdjustArg import AdjustArg
 
-logging.disable(logging.INFO)
-logging.disable(logging.ERROR)
+# logging.disable(logging.INFO)
+# logging.disable(logging.ERROR)
 
-
-# logging.basicConfig(level=logging.DEBUG,
-#                     filename='../logs/CodeCraft-2019.log',
-#                     format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
-#                     datefmt='%Y-%m-%d %H:%M:%S',
-#                     filemode='w+')
+logging.basicConfig(level=logging.DEBUG,
+                    filename='../logs/CodeCraft-2019.log',
+                    format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    filemode='w+')
 
 
 def main():
@@ -32,15 +30,28 @@ def main():
     logging.info("answer_path is %s" % (answer_path))
 
     conf = car_path, road_path, cross_path, answer_path
-    solution = GetSolution(conf)
 
-    solution.load_data_and_build_graph()
-    solution.compute_result()
-    solution.output_solution()
+    # solution = GetSolution(conf)
+    # solution.load_data_and_build_graph()
+    # solution.compute_result()
+    # solution.output_solution()
+    #
+    # # ********** 判题器 ***************
+    # simulator = CheckAnswer(car_path, road_path, cross_path, answer_path)
+    # simulate_result = simulator.simulating()
 
-    # 模拟，检验生成的答案
-    simulator = CheckAnswer(car_path, road_path, cross_path, answer_path)
-    simulator.simulating()
+    # ********** 调参 ***************
+    # omega = [2, 16, 64, 128, 256]
+    # alpha = [1, 1 / 2, 1/8, 1/32, 1/128]
+    # gama = [1, 1/2, 1/8, 1/16, 0]
+    # const = [1, 2, 4, 16]
+    omega = [16, 64, 128]
+    alpha = [1, 1 / 2, 1 / 8]
+    # alpha = [1 / 2]
+    gama = [1, 1 / 2, 1 / 8]
+    const = [1, 2, 4]
+    adjust_arg = AdjustArg(conf, omega=omega, alpha=alpha, gama=gama, const=const)
+    adjust_arg.start_adjust_arg()
 
 
 # to read input file

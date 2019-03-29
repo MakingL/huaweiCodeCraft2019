@@ -96,7 +96,9 @@ class Graph(object):
         :param weight_delta: 权值变化值，可正可负
         :return:
         """
+        change_before = self.edge_dict[edge_id].weight
         self.edge_dict[edge_id].weight += weight_delta
+        return change_before, self.edge_dict[edge_id].weight
 
     def change_edge_travel_times(self, edge_id, times_delta):
         self.edge_dict[edge_id].traveled_times += times_delta

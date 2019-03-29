@@ -3,13 +3,16 @@
 # @Author  : MLee
 # @File    : AStar.py
 # import logging
+import logging
 from collections import deque
 
 
 class AStar:
-    def __init__(self, graph, floyd):
+    def __init__(self, graph, floyd, gama=1):
         self.graph = graph
         self.floyd = floyd
+        self.gama = gama
+        assert 0 <= self.gama <= 1, print("A star argument: gama should in [0, 1]: {}".format(self.gama))
 
     def distBetween(self, edge):
         """
@@ -81,7 +84,7 @@ class AStar:
         fScore = {}
         gScore[start] = 0
         # logging.info("openSet: {} ".format(list(openSet)))
-        fScore[start] = gScore[start] + self.heuristicEstimate(start, goal)
+        fScore[start] = (1 - self.gama) * gScore[start] + self.gama * self.heuristicEstimate(start, goal)
         # logging.info("h({}, {}): {} ".format(start, goal, self.heuristicEstimate(start, goal)))
         while len(openSet) != 0:
             # logging.info("openSet: {} ".format(list(openSet)))
@@ -95,13 +98,26 @@ class AStar:
             for edge_id, edge in self.neighborNodes(current).items():
                 adjacent_id = edge.end_id
                 # logging.info("node {} neighbor node: {} ".format(current, adjacent_id))
+
+                if self.distBetween(edge) < 0:
+                    logging.error("A star find negative weight distBetween(edge): {}".format(self.distBetween(edge)))
+                    return None
+
                 tentative_gScore = gScore[current] + self.distBetween(edge)
                 if adjacent_id in closedSet and tentative_gScore >= gScore[adjacent_id]:
                     continue
                 if adjacent_id not in closedSet or tentative_gScore < gScore[adjacent_id]:
                     cameFrom[adjacent_id] = current
                     gScore[adjacent_id] = tentative_gScore
-                    fScore[adjacent_id] = gScore[adjacent_id] + self.heuristicEstimate(adjacent_id, goal)
+                    fScore[adjacent_id] = (1 - self.gama) * gScore[adjacent_id] + self.gama * self.heuristicEstimate(
+                        adjacent_id, goal)
+
+                    if fScore[adjacent_id] < 0:
+                        logging.error(
+                            "A star got negative weight fScore[adjacent_id]: {} h(adjacent_id, goal): {}".format(
+                                fScore[adjacent_id], self.heuristicEstimate(adjacent_id, goal)))
+                        return None
+
                     if adjacent_id not in openSet:
                         openSet.add(adjacent_id)
         return 0

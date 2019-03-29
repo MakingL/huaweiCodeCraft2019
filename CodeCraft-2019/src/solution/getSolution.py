@@ -3,7 +3,6 @@
 # @Author  : MLee
 # @File    : getSolution.py
 import logging
-
 import math
 
 from AStar.AStar import AStar
@@ -38,11 +37,15 @@ class GetSolution(object):
         self.schedule_batch_size = 0
 
         # 计算 Num_CarPerTime 中的参数 w
-        self.omega = 64
+        self.omega = 8
 
         # 权值衰减公式中的参数 a
         self.alpha = 1 / 4
+
+        self.weight_update_const = 1
         self.weight_update_dict = dict()
+
+        self.gama = 1
 
     def load_data_and_build_graph(self):
         """
@@ -89,19 +92,20 @@ class GetSolution(object):
                     # 反向边添加到图中
                     self.graph.add_edge(end_id, back_road_id, new_road)
 
-        # logging.info("vertex list: {}".format(self.graph.get_vertex_list()))
         logging.info("road count: {}".format(road_count))
         logging.info("vertex count: {}".format(self.graph.get_vertex_count()))
-        logging.info("load data complete")
+        # logging.info("load data complete")
 
         # Floyd 求任意两点的最短距离，A* 算法用
         self.Floyd = Floyd(self.graph)
-        logging.info("Floyd init complete")
+        # logging.info("Floyd init complete")
 
     def compute_result(self):
         # 初始化调度参数
         self.schedule_batch_size = int(self.graph.get_vertex_count() *
                                        self.graph.get_average_chanel() / self.omega)
+        # 防止计算出来的值小于 1
+        self.schedule_batch_size = max(1, self.schedule_batch_size)
 
         logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
 
@@ -109,33 +113,43 @@ class GetSolution(object):
         self.pre_process()
         # logging.info("pending car list: {}".format(self.get_pending_car_id_list()))
 
+        # logging.info("initial edge weight")
+        # for e_id, edge in self.graph.edge_dict.items():
+        #     logging.info("edge: {} weight: {}".format(e_id, edge.weight))
+
         time_slice = 0
         while True:
             # 无车待调度
             if not self.has_pending_car():
-                logging.info("has no pending car in buffer! Done")
+                # logging.info("has no pending car in buffer! Done")
                 break
 
             # 时间片加一
             time_slice += 1
-            logging.info("time slice: {}".format(time_slice))
+            # logging.info("time slice: {}".format(time_slice))
+            # print("time slice: {}".format(time_slice))
 
             # ****** 衰减图边上的权值 ******
             self.update_decay_graph_weight()
 
             # 从待调度的车辆 Buffer 中获得一批车辆
             car_scheduling_set = self.get_scheduling_car(time_slice)
-            logging.info("got scheduling car set length: {}".format(len(car_scheduling_set)))
+            # logging.info("got scheduling car set length: {}".format(len(car_scheduling_set)))
 
             weight_update_dict = dict()
             weight_update_dict.clear()
             for car in car_scheduling_set:
-                logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
-                                                                                  car.car_from, car.car_to))
+                # logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
+                #                                                                   car.car_from, car.car_to))
 
                 # ***** A* 算法调度 ********
+                # print("starting search shortest path")
                 plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
+                # 存在负权值边
+                if plan_path is None:
+                    return -2
                 # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
+                # print("got shortest path")
 
                 # ***** Dijkstra 算法调度 *****
                 # plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
@@ -161,7 +175,8 @@ class GetSolution(object):
             # logging.info("time slice: {} weight_update_list len: {}".format(time_slice, len(self.weight_update_list)))
             # logging.info("time slice: {} weight_update_list: {}".format(time_slice, self.weight_update_list))
 
-        logging.info("total time slice: {}".format(time_slice))
+        logging.info("total schedule time slice: {}".format(time_slice))
+        return time_slice
 
     def output_solution(self):
         """
@@ -211,10 +226,25 @@ class GetSolution(object):
         for w_update in self.weight_update_list:
             for road_id in w_update:
                 w_u = w_update[road_id]["weight"]
-                beta = self.alpha * w_update[road_id]["times"]
+                # if w_u < 0:
+                #     logging.info("road_id: {} w_u: {}".format(road_id, w_u))
+                if w_u <= 1e-4:
+                    w_update[road_id]["weight"] = 0
+                    continue
 
-                self.graph.change_edge_weight(road_id, (beta - 1) * w_u)
+                # print('w_update[road_id]["times"]: {}'.format(w_update[road_id]["times"]))
+                beta = self.alpha * w_update[road_id]["times"]
+                # print("beta - 1: {}".format(beta - 1))
+
+                decayed_weight = (beta - 1) * w_u
                 w_update[road_id]["weight"] *= beta
+                change_before, after_decayed_weight = self.graph.change_edge_weight(road_id, decayed_weight)
+                if after_decayed_weight < 0:
+                    logging.error(
+                        "road_id: {} change_before: {} decayed_weight: {} after_decayed_weight: {}".format(road_id,
+                                                                                                           change_before,
+                                                                                                           decayed_weight,
+                                                                                                           after_decayed_weight))
 
     def update_graph_weight(self, road_path_list, weight_update_dict, car_speed):
         """
@@ -236,8 +266,11 @@ class GetSolution(object):
             speed_min = min(car_speed, edge.speed_limit)
             gama = vertex_degree * edge_chanel / speed_min
             # 加 1 防止生成负的权值变化量
-            gama += 2
+            gama += self.weight_update_const
             weight_update_delta = math.log(gama)
+
+            if weight_update_delta < 1e-4:
+                weight_update_delta = 0
 
             # 保存权值变化
             if road_id not in weight_update_dict:
@@ -249,13 +282,18 @@ class GetSolution(object):
             # weight_update_delta = self.graph.get_edge_weight_delta(road_id, car_speed)
             weight_update_dict[road_id]["weight"] += weight_update_delta
             weight_update_dict[road_id]["times"] += 1
-            logging.info("update weight_update_dict: {}".format(weight_update_dict))
 
-            # logging.info("update road weight: {} + {}".format(road_id, weight_update_delta))
+            if weight_update_delta < 0:
+                logging.error("update road {} weight: {}".format(road_id, weight_update_delta))
 
             # 更新道路上的权值
-            self.graph.change_edge_weight(road_id, weight_update_delta)
-            # self.graph.change_edge_travel_times(road_id, 1)
+            change_before, change_after = self.graph.change_edge_weight(road_id, weight_update_delta)
+            # logging.info(
+            #     "update weight road_id: {} change_before: {} weight_update_delta: {} change_after: {}".format(
+            #         road_id,
+            #         change_before,
+            #         weight_update_delta,
+            #         change_after))
 
     def get_a_star_path(self, graph, source, destination):
         """
@@ -265,7 +303,7 @@ class GetSolution(object):
         :param destination:
         :return:
         """
-        aStarSchedule = AStar(graph, self.Floyd)
+        aStarSchedule = AStar(graph, self.Floyd, self.gama)
         return aStarSchedule.aStar(source, destination)
 
     def get_dijkstra_path(self, graph, car_from, car_to):
@@ -308,6 +346,16 @@ class GetSolution(object):
             start_node = end_node
 
         return path_road
+
+    def set_argument(self, omega=None, alpha=None, gama=None, const_data=None):
+        if omega is not None:
+            self.omega = omega
+        if alpha is not None:
+            self.alpha = alpha
+        if gama is not None:
+            self.gama = gama
+        if const_data is not None:
+            self.weight_update_const = const_data
 
 
 if __name__ == '__main__':

@@ -1,4 +1,8 @@
-# -*- encoding=utf8 -*-
+# -*- coding: utf-8 -*-
+# @Time    : 2019/3/28 23:08
+# @Author  : MLee
+# @File    : Simulator.py
+import logging
 import sys
 
 import numpy as np
@@ -641,7 +645,7 @@ class Simulation(object):
         self.dead = False
 
     def step(self):
-        print("time:%d" % TIME[0])
+        # print("time:%d" % TIME[0])
         for crossId in CROSSNAMESPACE:
             CROSSDICT[crossId].setDone(False)
         # print("pre-movement...")
@@ -660,7 +664,11 @@ class Simulation(object):
                 if cross.__update__() or cross.__done__():
                     self.dead = False
             unfinishedCross = nextCross
-            assert self.dead is False, print("dead lock in", unfinishedCross)
+            # assert self.dead is False, print("dead lock in", unfinishedCross)
+            if self.dead:
+                logging.info("Dead lock in: {}".format(unfinishedCross))
+                # print("Dead lock in: {}".format(unfinishedCross))
+                return -2
         # print("car pulling away from carport")
         for i in range(CROSSNAMESPACE.__len__()):
             crossId = CROSSNAMESPACE[i]
@@ -668,15 +676,26 @@ class Simulation(object):
                 ROADDICT[roadId].setBucket(crossId)
             CROSSDICT[crossId].outOfCarport()
 
-    def simulate(self):
+        return 0
+
+    def simulate(self, car_num, road_num):
+        max_epoch = car_num * road_num
+        logging.info("Max simulate epoch: {}".format(max_epoch))
         while True:
-            self.step()
+            if self.step() < 0:
+                return -2
             if CARDISTRIBUTION[2] == CARNAMESPACE.__len__():
-                print(CARDISTRIBUTION[2])
-                break
+                # print(CARDISTRIBUTION[2])
+                logging.info("Simulate pass total car: {}".format(CARDISTRIBUTION[2]))
+                logging.info("Simulate time: {}".format(TIME[0]))
+                return TIME[0]
             if self.dead:
-                break
+                return -2
             TIME[0] += 1
+            if TIME[0] >= max_epoch:
+                print("Reach max epoch: {}, times: {}".format(max_epoch, TIME[0]))
+                logging.info("Reach max epoch: {}, times: {}".format(max_epoch, TIME[0]))
+                return -3
 
 
 class CheckAnswer(object):
@@ -686,13 +705,29 @@ class CheckAnswer(object):
         super(CheckAnswer, self).__init__()
         self.car_path, self.road_path, self.cross_path, self.answer_path = car_path, road_path, cross_path, answer_path
 
+        # *** 全局变量初始化，以适应类多次重入 ***
+        CARNAMESPACE.clear()
+        ROADNAMESPACE.clear()
+        CROSSNAMESPACE.clear()
+        CARDICT.clear()
+        CROSSDICT.clear()
+        ROADDICT.clear()
+        TIME[0] = 0
+        CARDISTRIBUTION[0] = 0
+        CARDISTRIBUTION[1] = 0
+        CARDISTRIBUTION[2] = 0
+        np.random.seed(951105)
+
     def simulating(self):
+        # logging.info("Start simulating...")
+
         # ************************************* M A I N *******************************************#
         # load .txt files
         carInfo = open(self.car_path, 'r').read().split('\n')[1:]
         roadInfo = open(self.road_path, 'r').read().split('\n')[1:]
         crossInfo = open(self.cross_path, 'r').read().split('\n')[1:]
         answerInfo = open(self.answer_path, 'r').read().split('\n')
+
         # *****************************Create NameSpace And Dictionary*****************************#
         # create car objects
         # line = (id,from,to,speed,planTime)
@@ -700,6 +735,7 @@ class CheckAnswer(object):
             id_, from_, to_, speed_, planTime_ = line.replace(' ', '').replace('\t', '')[1:-1].split(',')
             CARNAMESPACE.append(int(id_))
             CARDICT[int(id_)] = CAR(int(id_), int(from_), int(to_), int(speed_), int(planTime_))
+
         # create road objects
         # line = (id,length,speed,channel,from,to,isDuplex)
         for line in roadInfo:
@@ -708,12 +744,14 @@ class CheckAnswer(object):
             ROADNAMESPACE.append(int(id_))
             ROADDICT[int(id_)] = ROAD(int(id_), int(length_), int(speed_), int(channel_), int(from_), int(to_),
                                       int(isDuplex_))
+
         # create cross objects
         # line = (id,north,east,south,west)
         for line in crossInfo:
             id_, north_, east_, south_, west_ = line.replace(' ', '').replace('\t', '')[1:-1].split(',')
             CROSSNAMESPACE.append(int(id_))
             CROSSDICT[int(id_)] = CROSS(int(id_), int(north_), int(east_), int(south_), int(west_))
+
         # car route initialize
         # line = (id,startTime,route)
         count = 0
@@ -728,7 +766,10 @@ class CheckAnswer(object):
             route = [int(roadId) for roadId in line[2:]]
             CARDICT[carId].simulateInit(planTime_, route)
             count += 1
-        print("There are %d cars' route preinstalled" % count)
+
+        # print("There are %d cars' route preinstalled" % count)
+        logging.info("There are {} cars' route pre-installed".format(count))
+
         CARDISTRIBUTION[0] = CARNAMESPACE.__len__()
         # **** cross initialization ****#
         for carId in CARNAMESPACE:
@@ -736,9 +777,12 @@ class CheckAnswer(object):
         # ****Initialization ****#
         CARNAMESPACE.sort()
         CROSSNAMESPACE.sort()
+
+        car_num = len(CARNAMESPACE)
+        road_num = len(ROADNAMESPACE)
         # simulator
         simulate_obj = Simulation()
-        simulate_obj.simulate()
+        return simulate_obj.simulate(car_num, road_num)
 
 
 def takeSecond(elem):
@@ -757,6 +801,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# python simulator.py ../config_11/car.txt ../config_11/road.txt ../config_11/cross.txt ../config_11/answer.txt
-# python simulator.py ../config_12/car.txt ../config_12/road.txt ../config_12/cross.txt ../config_12/answer.txt
