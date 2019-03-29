@@ -45,18 +45,30 @@ def main():
     # alpha = [1, 1 / 2, 1/8, 1/32, 1/128]
     # gama = [1, 1/2, 1/8, 1/16, 0]
     # const = [1, 2, 4, 16]
-    omega = [16, 64, 128]
-    alpha = [1, 1 / 2, 1 / 8]
-    # alpha = [1 / 2]
-    gama = [1, 1 / 2, 1 / 8]
-    const = [1, 2, 4]
-    adjust_arg = AdjustArg(conf, omega=omega, alpha=alpha, gama=gama, const=const)
+    # omega = [45, ]
+    # const = [1, ]
+    alpha = [1 / 6, ]
+    gama = [1 / 2, ]
+    a = [1, ]
+    b = [10, ]
+    c = [10, ]
+
+    argument_dict = dict()
+    # argument_dict["const"] = const
+    # argument_dict["omega"] = omega
+    argument_dict["alpha"] = alpha
+    argument_dict["gama"] = gama
+    argument_dict["a"] = a
+    argument_dict["b"] = b
+    argument_dict["c"] = c
+
+    print("argument_dict: {}".format(argument_dict))
+    adjust_arg = AdjustArg(conf, argument_dict=argument_dict)
     adjust_arg.start_adjust_arg()
 
-
-# to read input file
-# process
-# to write output file
+    # to read input file
+    # process
+    # to write output file
 
 
 if __name__ == "__main__":

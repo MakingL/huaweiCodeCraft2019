@@ -47,6 +47,11 @@ class GetSolution(object):
 
         self.gama = 1
 
+        # 车辆 batch size 的二次函数参数
+        self.batch_c = 10
+        self.batch_b = 10
+        self.batch_a = 1
+
     def load_data_and_build_graph(self):
         """
         导入输入数据并构建图
@@ -102,12 +107,13 @@ class GetSolution(object):
 
     def compute_result(self):
         # 初始化调度参数
-        self.schedule_batch_size = int(self.graph.get_vertex_count() *
-                                       self.graph.get_average_chanel() / self.omega)
-        # 防止计算出来的值小于 1
-        self.schedule_batch_size = max(1, self.schedule_batch_size)
+        # self.schedule_batch_size = int(self.graph.get_vertex_count() *
+        #                                self.graph.get_average_chanel() / self.omega)
 
-        logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
+        # # 防止计算出来的值小于 1
+        # self.schedule_batch_size = max(1, self.schedule_batch_size)
+        #
+        # logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
 
         # 预处理，对待调度的车辆进行排序
         self.pre_process()
@@ -119,6 +125,13 @@ class GetSolution(object):
 
         time_slice = 0
         while True:
+            # 获取动态的车辆调度
+            self.schedule_batch_size = self.get_schedule_batch_size(time_slice)
+            # 防止计算出来的值小于 1
+            self.schedule_batch_size = max(1, self.schedule_batch_size)
+
+            logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
+
             # 无车待调度
             if not self.has_pending_car():
                 # logging.info("has no pending car in buffer! Done")
@@ -228,7 +241,7 @@ class GetSolution(object):
                 w_u = w_update[road_id]["weight"]
                 # if w_u < 0:
                 #     logging.info("road_id: {} w_u: {}".format(road_id, w_u))
-                if w_u <= 1e-4:
+                if w_u <= 1e-5:
                     w_update[road_id]["weight"] = 0
                     continue
 
@@ -241,10 +254,11 @@ class GetSolution(object):
                 change_before, after_decayed_weight = self.graph.change_edge_weight(road_id, decayed_weight)
                 if after_decayed_weight < 0:
                     logging.error(
-                        "road_id: {} change_before: {} decayed_weight: {} after_decayed_weight: {}".format(road_id,
-                                                                                                           change_before,
-                                                                                                           decayed_weight,
-                                                                                                           after_decayed_weight))
+                        "road_id: {} change_before: {} decayed_weight: {}"
+                        " after_decayed_weight: {}".format(road_id,
+                                                           change_before,
+                                                           decayed_weight,
+                                                           after_decayed_weight))
 
     def update_graph_weight(self, road_path_list, weight_update_dict, car_speed):
         """
@@ -265,6 +279,7 @@ class GetSolution(object):
             vertex_degree = self.graph.get_vertex_degree(edge_start_id)
             speed_min = min(car_speed, edge.speed_limit)
             gama = vertex_degree * edge_chanel / speed_min
+
             # 加 1 防止生成负的权值变化量
             gama += self.weight_update_const
             weight_update_delta = math.log(gama)
@@ -347,7 +362,8 @@ class GetSolution(object):
 
         return path_road
 
-    def set_argument(self, omega=None, alpha=None, gama=None, const_data=None):
+    def set_argument(self, omega=None, alpha=None, gama=None, const_data=None, batch_a=None, batch_b=None,
+                     batch_c=None):
         if omega is not None:
             self.omega = omega
         if alpha is not None:
@@ -356,6 +372,15 @@ class GetSolution(object):
             self.gama = gama
         if const_data is not None:
             self.weight_update_const = const_data
+        if batch_a is not None:
+            self.batch_a = batch_a
+        if batch_b is not None:
+            self.batch_b = batch_b
+        if batch_c is not None:
+            self.batch_c = batch_c
+
+    def get_schedule_batch_size(self, time_slice):
+        return -1 * self.batch_a * ((time_slice - self.batch_b) ** 2) + self.batch_c
 
 
 if __name__ == '__main__':
