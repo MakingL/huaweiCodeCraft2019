@@ -32,12 +32,14 @@ class GetSolution(object):
         # 权值更新的列表
         self.weight_update_list = list()
 
+        self.graph_vertex_count = 0
+        self.graph_average_chanel = 0
         # ******** 可调参数 *********
         # Num_CarPerTime 即 每时间切片调度的车辆大小
         self.schedule_batch_size = 0
 
         # 计算 Num_CarPerTime 中的参数 w
-        self.omega = 46
+        self.omega = 20
 
         # 权值衰减公式中的参数 a
         self.alpha = 1 / 6
@@ -48,9 +50,118 @@ class GetSolution(object):
         self.gama = 0.5
 
         # 车辆 batch size 的二次函数参数
-        self.batch_c = 10
-        self.batch_b = 10
-        self.batch_a = 1
+        self.batch_c = 20
+        self.batch_b = 1500
+        self.batch_a = 2.2e-6
+
+    def get_schedule_batch_size(self, time_slice):
+        # logging.info("time_slice: {}".format(time_slice))
+        # logging.info("(time_slice - self.batch_b) ** 2: {}".format(time_slice - self.batch_b ** 2))
+        # # print("(time_slice - self.batch_b) ** 2: {}".format(time_slice - self.batch_b ** 2))
+
+        # self.omega = -self.batch_a * ((time_slice - self.batch_b) ** 2) + self.batch_c
+
+        # logging.info("omega: {}".format(self.omega))
+        # logging.info("N*C: {}".format(self.graph_vertex_count * self.graph_average_chanel))
+        # # print("N*C: {}".format(self.graph_vertex_count * self.graph_average_chanel))
+
+        # result = int(self.graph_vertex_count * self.graph_average_chanel / self.omega)
+
+        # # print("result: {}".format(result))
+        # logging.info("result: {}".format(result))
+
+        result = int(self.graph.get_vertex_count() *
+                     self.graph.get_average_chanel() / self.omega)
+        return result
+
+    def compute_result(self):
+        self.graph_vertex_count = self.graph.get_vertex_count()
+        self.graph_average_chanel = self.graph.get_average_chanel()
+
+        # 初始化调度参数
+        self.schedule_batch_size = int(self.graph.get_vertex_count() *
+                                       self.graph.get_average_chanel() / self.omega)
+
+        # 防止计算出来的值小于 1
+        self.schedule_batch_size = max(1, self.schedule_batch_size)
+        #
+        # logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
+
+        # 预处理，对待调度的车辆进行排序
+        self.pre_process()
+        # logging.info("pending car list: {}".format(self.get_pending_car_id_list()))
+
+        # logging.info("initial edge weight")
+        # for e_id, edge in self.graph.edge_dict.items():
+        #     logging.info("edge: {} weight: {}".format(e_id, edge.weight))
+
+        time_slice = 0
+        while True:
+            # 获取动态的车辆调度
+            # self.schedule_batch_size = self.get_schedule_batch_size(time_slice)
+            # # 防止计算出来的值小于 1
+            # self.schedule_batch_size = max(1, self.schedule_batch_size)
+            # logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
+            # print("schedule car batch size: {}".format(self.schedule_batch_size))
+
+            # 无车待调度
+            if not self.has_pending_car():
+                # logging.info("has no pending car in buffer! Done")
+                break
+
+            # 时间片加一
+            time_slice += 1
+            # logging.info("time slice: {}".format(time_slice))
+            # print("time slice: {}".format(time_slice))
+
+            # ****** 衰减图边上的权值 ******
+            self.update_decay_graph_weight()
+
+            # 从待调度的车辆 Buffer 中获得一批车辆
+            car_scheduling_set = self.get_scheduling_car(time_slice)
+            # logging.info("got scheduling car set length: {}".format(len(car_scheduling_set)))
+
+            weight_update_dict = dict()
+            weight_update_dict.clear()
+            for car in car_scheduling_set:
+                # logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
+                #                                                                   car.car_from, car.car_to))
+
+                # ***** A* 算法调度 ********
+                # print("starting search shortest path")
+                plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
+                # 存在负权值边
+                if plan_path is None:
+                    return -2
+                # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
+                # print("got shortest path")
+
+                # ***** Dijkstra 算法调度 *****
+                # plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
+                # logging.info("car: {} shortest path: {} cost: {}".format(car.car_id, plan_path, cost))
+
+                # 将路径由节点的序列转换为道路的序列
+                path_list = self.trans_path_to_road(plan_path)
+
+                # 该车辆调度已确定，car 对象可删除
+                self.car_dict[car.car_id].plan_path_list = path_list
+                # 车辆的真实出发时间
+                self.car_dict[car.car_id].true_start_time = time_slice
+
+                # ****** 更新边上的权值 ******
+                self.update_graph_weight(path_list, weight_update_dict, car.speed)
+
+            # 道路访问的车辆数归一化处理
+            for road_id in weight_update_dict:
+                weight_update_dict[road_id]["times"] /= self.schedule_batch_size
+
+            # 当前时间片的道路权值更新信息保存到列表
+            self.weight_update_list.append(weight_update_dict)
+            # logging.info("time slice: {} weight_update_list len: {}".format(time_slice, len(self.weight_update_list)))
+            # logging.info("time slice: {} weight_update_list: {}".format(time_slice, self.weight_update_list))
+
+        logging.info("total schedule time slice: {}".format(time_slice))
+        return time_slice
 
     def load_data_and_build_graph(self):
         """
@@ -114,91 +225,6 @@ class GetSolution(object):
 
         logging.info("car count: {}".format(len(self.car_dict)))
 
-    def compute_result(self):
-        # # 初始化调度参数
-        # self.schedule_batch_size = int(self.graph.get_vertex_count() *
-        #                                self.graph.get_average_chanel() / self.omega)
-        #
-        # # 防止计算出来的值小于 1
-        # self.schedule_batch_size = max(1, self.schedule_batch_size)
-        #
-        # logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
-
-        # 预处理，对待调度的车辆进行排序
-        self.pre_process()
-        # logging.info("pending car list: {}".format(self.get_pending_car_id_list()))
-
-        # logging.info("initial edge weight")
-        # for e_id, edge in self.graph.edge_dict.items():
-        #     logging.info("edge: {} weight: {}".format(e_id, edge.weight))
-
-        time_slice = 0
-        while True:
-            # 获取动态的车辆调度
-            self.schedule_batch_size = self.get_schedule_batch_size(time_slice)
-            # 防止计算出来的值小于 1
-            self.schedule_batch_size = max(1, self.schedule_batch_size)
-            # logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
-
-            # 无车待调度
-            if not self.has_pending_car():
-                # logging.info("has no pending car in buffer! Done")
-                break
-
-            # 时间片加一
-            time_slice += 1
-            # logging.info("time slice: {}".format(time_slice))
-            # print("time slice: {}".format(time_slice))
-
-            # ****** 衰减图边上的权值 ******
-            self.update_decay_graph_weight()
-
-            # 从待调度的车辆 Buffer 中获得一批车辆
-            car_scheduling_set = self.get_scheduling_car(time_slice)
-            # logging.info("got scheduling car set length: {}".format(len(car_scheduling_set)))
-
-            weight_update_dict = dict()
-            weight_update_dict.clear()
-            for car in car_scheduling_set:
-                # logging.info("schedule car: {}. Search node {} to node {}".format(car.car_id,
-                #                                                                   car.car_from, car.car_to))
-
-                # ***** A* 算法调度 ********
-                # print("starting search shortest path")
-                plan_path = self.get_a_star_path(self.graph, car.car_from, car.car_to)
-                # 存在负权值边
-                if plan_path is None:
-                    return -2
-                # logging.info("car: {} shortest path: {}".format(car.car_id, plan_path))
-                # print("got shortest path")
-
-                # ***** Dijkstra 算法调度 *****
-                # plan_path, cost = self.get_dijkstra_path(self.graph, car.car_from, car.car_to)
-                # logging.info("car: {} shortest path: {} cost: {}".format(car.car_id, plan_path, cost))
-
-                # 将路径由节点的序列转换为道路的序列
-                path_list = self.trans_path_to_road(plan_path)
-
-                # 该车辆调度已确定，car 对象可删除
-                self.car_dict[car.car_id].plan_path_list = path_list
-                # 车辆的真实出发时间
-                self.car_dict[car.car_id].true_start_time = time_slice
-
-                # ****** 更新边上的权值 ******
-                self.update_graph_weight(path_list, weight_update_dict, car.speed)
-
-            # 道路访问的车辆数归一化处理
-            for road_id in weight_update_dict:
-                weight_update_dict[road_id]["times"] /= self.schedule_batch_size
-
-            # 当前时间片的道路权值更新信息保存到列表
-            self.weight_update_list.append(weight_update_dict)
-            # logging.info("time slice: {} weight_update_list len: {}".format(time_slice, len(self.weight_update_list)))
-            # logging.info("time slice: {} weight_update_list: {}".format(time_slice, self.weight_update_list))
-
-        logging.info("total schedule time slice: {}".format(time_slice))
-        return time_slice
-
     def output_solution(self):
         """
         输出该地图的调度结果到 answer 文件
@@ -239,8 +265,10 @@ class GetSolution(object):
         修改为：对车辆按照在地图上行驶的期望时间和速度进行排序
         :return:
         """
+        self.pending_car_list.sort(key=lambda x: (x.plan_time, x.speed), reverse=False)
         # self.pending_car_list.sort(key=lambda x: (x.plan_time, -x.speed), reverse=False)
-        self.pending_car_list.sort(key=lambda x: (x.exp_cost_time, -x.speed), reverse=False)
+        # self.pending_car_list.sort(key=lambda x: (x.exp_cost_time, x.speed), reverse=False)
+        # self.pending_car_list.sort(key=lambda x: (x.exp_cost_time, -x.speed), reverse=False)
 
     def update_decay_graph_weight(self):
         """
@@ -295,7 +323,7 @@ class GetSolution(object):
             gama += self.weight_update_const
             weight_update_delta = math.log(gama)
 
-            if weight_update_delta < 1e-4:
+            if weight_update_delta < 1e-5:
                 weight_update_delta = 0
 
             # 保存权值变化
@@ -389,28 +417,3 @@ class GetSolution(object):
             self.batch_b = batch_b
         if batch_c is not None:
             self.batch_c = batch_c
-
-    def get_schedule_batch_size(self, time_slice):
-        return -1 * self.batch_a * ((time_slice - self.batch_b) ** 2) + self.batch_c
-
-
-if __name__ == '__main__':
-    car_path = "../../config/car.txt"
-    road_path = "../../config/road.txt"
-    cross_path = "../../config/cross.txt"
-    answer_path = "../../config/answer.txt"
-
-    # logging.disable(logging.INFO)
-    # logging.disable(logging.ERROR)
-    logging.basicConfig(level=logging.DEBUG,
-                        filename='../logs/CodeCraft-2019.log',
-                        format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
-                        datefmt='%Y-%m-%d %H:%M:%S',
-                        filemode='w+')
-
-    conf = car_path, road_path, cross_path, answer_path
-    solution = GetSolution(conf)
-
-    solution.load_data_and_build_graph()
-    solution.compute_result()
-    solution.output_solution()

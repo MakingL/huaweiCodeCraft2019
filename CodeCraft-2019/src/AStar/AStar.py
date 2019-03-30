@@ -101,6 +101,7 @@ class AStar:
 
                 if self.distBetween(edge) < 0:
                     logging.error("A star find negative weight distBetween(edge): {}".format(self.distBetween(edge)))
+                    print("A star find negative weight distBetween(edge): {}".format(self.distBetween(edge)))
                     return None
 
                 tentative_gScore = gScore[current] + self.distBetween(edge)
@@ -114,6 +115,9 @@ class AStar:
 
                     if fScore[adjacent_id] < 0:
                         logging.error(
+                            "A star got negative weight fScore[adjacent_id]: {} h(adjacent_id, goal): {}".format(
+                                fScore[adjacent_id], self.heuristicEstimate(adjacent_id, goal)))
+                        print(
                             "A star got negative weight fScore[adjacent_id]: {} h(adjacent_id, goal): {}".format(
                                 fScore[adjacent_id], self.heuristicEstimate(adjacent_id, goal)))
                         return None
