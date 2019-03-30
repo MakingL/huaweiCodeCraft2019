@@ -45,17 +45,22 @@ def main():
     # alpha = [1, 1 / 2, 1/8, 1/32, 1/128]
     # gama = [1, 1/2, 1/8, 1/16, 0]
     # const = [1, 2, 4, 16]
-    # omega = [45, ]
-    # const = [1, ]
-    alpha = [1 / 6, ]
-    gama = [1 / 2, ]
-    a = [1, ]
-    b = [10, ]
-    c = [10, ]
+
+    # ****************
+    # omega 已舍弃不用
+    omega = [64, ]
+    const = [1, ]
+
+    # 上面两个参数不用调
+    alpha = [1, 1/6, 1/12]
+    gama = [1, 1 / 8, 1/16]
+    a = [1, 128, 512, 1024]
+    b = [1, 128, 512, 1024]
+    c = [1, 100, 10000, 100000]
 
     argument_dict = dict()
-    # argument_dict["const"] = const
-    # argument_dict["omega"] = omega
+    argument_dict["const"] = const
+    argument_dict["omega"] = omega
     argument_dict["alpha"] = alpha
     argument_dict["gama"] = gama
     argument_dict["a"] = a

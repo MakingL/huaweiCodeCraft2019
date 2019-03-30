@@ -37,15 +37,15 @@ class GetSolution(object):
         self.schedule_batch_size = 0
 
         # 计算 Num_CarPerTime 中的参数 w
-        self.omega = 8
+        self.omega = 46
 
         # 权值衰减公式中的参数 a
-        self.alpha = 1 / 4
+        self.alpha = 1 / 6
 
         self.weight_update_const = 1
         self.weight_update_dict = dict()
 
-        self.gama = 1
+        self.gama = 0.5
 
         # 车辆 batch size 的二次函数参数
         self.batch_c = 10
@@ -57,19 +57,6 @@ class GetSolution(object):
         导入输入数据并构建图
         :return:
         """
-        # 读取车辆信息
-        with open(self.car_path, 'r') as car_file:
-            for line in car_file:
-                line = line.strip(" \n()")
-                if line == "" or line.startswith("#"):
-                    continue
-                data = line.replace(" ", "").replace("\t", "")
-                car_id, car_from, car_to, car_speed, car_plan_time = data.split(",")
-                car_conf = car_id, car_from, car_to, int(car_speed), int(car_plan_time)
-                self.car_dict[car_id] = Car(car_conf)
-                self.pending_car_list.append(self.car_dict[car_id])
-
-        logging.info("car count: {}".format(len(self.car_dict)))
 
         # 读取边的信息，建图
         road_count = 0
@@ -101,15 +88,37 @@ class GetSolution(object):
         logging.info("vertex count: {}".format(self.graph.get_vertex_count()))
         # logging.info("load data complete")
 
-        # Floyd 求任意两点的最短距离，A* 算法用
+        # Floyd 求任意两点的最短距离，A* 算法用，预处理车辆排序也用
         self.Floyd = Floyd(self.graph)
         # logging.info("Floyd init complete")
 
+        road_avg_speed = self.graph.get_average_road_speed()
+
+        # 读取车辆信息
+        with open(self.car_path, 'r') as car_file:
+            for line in car_file:
+                line = line.strip(" \n()")
+                if line == "" or line.startswith("#"):
+                    continue
+                data = line.replace(" ", "").replace("\t", "")
+                car_id, car_from, car_to, car_speed, car_plan_time = data.split(",")
+
+                # 车辆在道路上行驶的期望时间
+                exp_drive_len = self.Floyd.get_dist(car_from, car_to)
+                exp_cost_time = exp_drive_len / min(road_avg_speed, int(car_speed)) + int(car_plan_time)
+
+                car_conf = car_id, car_from, car_to, int(car_speed), int(car_plan_time), exp_cost_time
+
+                self.car_dict[car_id] = Car(car_conf)
+                self.pending_car_list.append(self.car_dict[car_id])
+
+        logging.info("car count: {}".format(len(self.car_dict)))
+
     def compute_result(self):
-        # 初始化调度参数
+        # # 初始化调度参数
         # self.schedule_batch_size = int(self.graph.get_vertex_count() *
         #                                self.graph.get_average_chanel() / self.omega)
-
+        #
         # # 防止计算出来的值小于 1
         # self.schedule_batch_size = max(1, self.schedule_batch_size)
         #
@@ -129,8 +138,7 @@ class GetSolution(object):
             self.schedule_batch_size = self.get_schedule_batch_size(time_slice)
             # 防止计算出来的值小于 1
             self.schedule_batch_size = max(1, self.schedule_batch_size)
-
-            logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
+            # logging.info("schedule car batch size: {}".format(self.schedule_batch_size))
 
             # 无车待调度
             if not self.has_pending_car():
@@ -226,10 +234,13 @@ class GetSolution(object):
 
     def pre_process(self):
         """
-        对车辆按照起始时间和速度进行升序排序
+        # 对车辆按照起始时间和速度进行升序排序
+
+        修改为：对车辆按照在地图上行驶的期望时间和速度进行排序
         :return:
         """
-        self.pending_car_list.sort(key=lambda x: (x.plan_time, x.speed), reverse=False)
+        # self.pending_car_list.sort(key=lambda x: (x.plan_time, -x.speed), reverse=False)
+        self.pending_car_list.sort(key=lambda x: (x.exp_cost_time, -x.speed), reverse=False)
 
     def update_decay_graph_weight(self):
         """

@@ -11,7 +11,7 @@ class Car(object):
 
     def __init__(self, car_conf):
         super(Car, self).__init__()
-        self.car_id, self.car_from, self.car_to, self.speed, self.plan_time = car_conf
+        self.car_id, self.car_from, self.car_to, self.speed, self.plan_time, self.exp_cost_time = car_conf
         self.true_start_time = 0
         # self.plan_path = deque()
         self.plan_path_list = list()
@@ -39,6 +39,7 @@ class Graph(object):
         self.graph_dict = graph_dict if graph_dict is not None else dict(set())
         self.graph_adjacent_dict = dict(dict())
         self.total_chanel = 0
+        self.total_speed = 0
 
     def add_edge(self, start_id, edge_id, edge):
         # 联接表
@@ -61,7 +62,9 @@ class Graph(object):
             self.adjacent_edge_dict[start_id] = dict()
         self.adjacent_edge_dict[start_id][end_id] = edge_id
 
+        # 所有边的总车道数
         self.total_chanel += edge.chanel
+        self.total_speed += edge.speed_limit
 
         # 顶点集
         self.add_vertex(start_id)
@@ -110,7 +113,7 @@ class Graph(object):
         return self.edge_dict[edge_id].traveled_times
 
     def get_average_chanel(self):
-        return self.total_chanel / self.get_vertex_count()
+        return self.total_chanel / self.get_edge_count()
 
     def get_edge_weight_delta(self, edge_id, car_speed):
         edge = self.edge_dict[edge_id]
@@ -150,3 +153,6 @@ class Graph(object):
 
     def get_adjacent_edge_dict(self):
         return self.adjacent_edge_dict
+
+    def get_average_road_speed(self):
+        return self.total_speed / self.get_edge_count()
