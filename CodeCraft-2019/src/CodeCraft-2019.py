@@ -2,18 +2,17 @@
 import logging
 import sys
 
-from Simulator.Simulator import CheckAnswer
 from solution.getSolution import GetSolution
-from AdjustArg.AdjustArg import AdjustArg
 
-# logging.disable(logging.INFO)
-# logging.disable(logging.ERROR)
+logging.disable(logging.INFO)
+logging.disable(logging.ERROR)
 
-logging.basicConfig(level=logging.DEBUG,
-                    filename='../logs/CodeCraft-2019.log',
-                    format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    filemode='w+')
+
+# logging.basicConfig(level=logging.DEBUG,
+#                     filename='../logs/CodeCraft-2019.log',
+#                     format='[%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s',
+#                     datefmt='%Y-%m-%d %H:%M:%S',
+#                     filemode='w+')
 
 
 def main():
@@ -36,14 +35,14 @@ def main():
     solution = GetSolution(conf)
     solution.load_data_and_build_graph()
     if solution.compute_result() < 0:
-        print("Solution result error")
+        # print("Solution result error")
         return -1
     solution.output_solution()
 
     # ********** 判题器 ***************
-    simulator = CheckAnswer(car_path, road_path, cross_path, answer_path)
-    simulate_result = simulator.simulating()
-    print("simulate_result: {}".format(simulate_result))
+    # simulator = CheckAnswer(car_path, road_path, cross_path, answer_path)
+    # simulate_result = simulator.simulating()
+    # print("simulate_result: {}".format(simulate_result))
 
     # ********** 调参 ***************
     # omega = [2, 16, 64, 128, 256]
@@ -75,10 +74,6 @@ def main():
     # print("argument_dict: {}".format(argument_dict))
     # adjust_arg = AdjustArg(conf, argument_dict=argument_dict)
     # adjust_arg.start_adjust_arg()
-
-    # to read input file
-    # process
-    # to write output file
 
 
 if __name__ == "__main__":

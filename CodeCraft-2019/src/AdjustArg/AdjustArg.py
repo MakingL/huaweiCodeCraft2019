@@ -10,7 +10,10 @@ from solution.getSolution import GetSolution
 
 
 class AdjustArg(object):
-    """docstring for AdjustArg"""
+    """
+        调参的类
+        用于参数的自动搜索
+    """
 
     def __init__(self, conf, argument_dict, arg_save_path="./arg_info.txt"):
         super(AdjustArg, self).__init__()
@@ -35,6 +38,10 @@ class AdjustArg(object):
         self.arg_save_path = arg_save_path
 
     def start_adjust_arg(self):
+        """
+        自动搜索参数，即传入参数，看指定参数下的输出结果，保存最优的参数值
+        :return:
+        """
         search_epoch = 0
         last_progress = 0
 
