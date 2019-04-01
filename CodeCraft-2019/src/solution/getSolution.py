@@ -39,7 +39,7 @@ class GetSolution(object):
         self.schedule_batch_size = 0
 
         # 计算 Num_CarPerTime 中的参数 w
-        self.omega = 20
+        self.omega = 21
 
         # 权值衰减公式中的参数 a
         self.alpha = 1 / 6
